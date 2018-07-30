@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linear_filter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3F2FD"
+    android:orientation="vertical"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:id="@+id/btn_cancel_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:text="بازگشت  "
+                android:textColor="#fff"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:drawableLeft="@drawable/back"
+                android:padding="5dp"
+                android:onClick="dismissFilterDialog"/>
+
+            <TextView
+                android:id="@+id/btn_submit_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:text="  تایید"
+                android:textColor="#fff"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:drawableRight="@drawable/checked"
+                android:padding="5dp"
+                android:onClick="dismissFilterDialog"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rel_select_province"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_white_rectangle">
+
+                <Spinner
+                    android:id="@+id/sp_province"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:entries="@array/provinces"
+                    android:padding="0dp"/>
+
+                <Spinner
+                    android:id="@+id/sp_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:entries="@array/provinces"
+                    android:padding="0dp"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_select_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_white_rectangle">
+
+                <TextView
+                    android:id="@+id/txt_mortgage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right|center"
+                    android:padding="10dp"
+                    android:text="ودیعه"
+                    android:textColor="@color/gray800"
+                    android:textSize="14sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rel_mortgage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_mortgage">
+
+
+                    <Spinner
+                        android:id="@+id/sp_from_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="20dp"
+                        android:entries="@array/provinces"
+                        android:padding="0dp"/>
+
+                    <Spinner
+                        android:id="@+id/sp_to_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="20dp"
+                        android:entries="@array/provinces"
+                        android:padding="0dp"/>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/txt_rent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/rel_mortgage"
+                    android:gravity="right|center"
+                    android:padding="10dp"
+                    android:text="اجاره"
+                    android:textColor="@color/gray800"
+                    android:textSize="14sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rel_rent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_rent">
+
+
+                    <Spinner
+                        android:id="@+id/sp_from_cost_rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="20dp"
+                        android:entries="@array/provinces"
+                        android:padding="0dp"/>
+
+                    <Spinner
+                        android:id="@+id/sp_to_cost_rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="20dp"
+                        android:entries="@array/provinces"
+                        android:padding="0dp"/>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_white_rectangle"
+                android:padding="10dp">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="هردو"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_both"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:checked="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="خوابگاه"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_dorm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="خانه"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"/>
+
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

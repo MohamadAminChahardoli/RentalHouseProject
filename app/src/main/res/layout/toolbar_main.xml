@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize">
+
+<TextView
+    android:id="@+id/txt_filter"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_alignParentRight="true"
+    android:background="?android:selectableItemBackground"
+    android:clickable="true"
+    android:text=" فیلتر "
+    android:gravity="center"
+    android:textColor="#fff"
+    android:paddingRight="10dp"
+    android:drawableRight="@drawable/filter"
+    android:onClick="showDialogForPerformFilters"/>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_toRightOf="@+id/btn_menu"
+    android:layout_toLeftOf="@+id/txt_filter"
+    android:text="خانه دانشجویی"
+    android:gravity="center"
+    android:textColor="#fff"
+    android:textSize="18sp"/>
+
+
+<ImageButton
+    android:id="@+id/btn_menu"
+    android:layout_width="?android:actionBarSize"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:background="?android:selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:srcCompat="@drawable/menu"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MainActivity">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <include layout="@layout/toolbar_effect_main"/>
+    <include layout="@layout/toolbar_main"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/sb_change_items"
+        android:layout_marginTop="140dp"/>
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/sb_change_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:progressTint="#1976D2"
+        android:thumb="@drawable/right_arrow_circular_button"
+        android:tickMark="@drawable/my_tick_mark"
+        android:progressDrawable="@drawable/my_progress_drawable_style"/>
+
+</RelativeLayout>
+
+    <include layout="@layout/filter_bottom_sheet"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

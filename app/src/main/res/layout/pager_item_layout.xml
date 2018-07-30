@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="3dp"
+    android:layout_centerInParent="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_house_main_photo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/pic3"
+            android:scaleType="centerCrop"
+            android:transitionName="mainHousePhoto"/>
+
+        <TextView
+            android:id="@+id/txt_house_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_house_main_photo"
+            android:text="نام خانه"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:textSize="18sp"
+            android:gravity="right"
+            android:textColor="@color/gray800"
+            android:transitionName="houseName"/>
+
+        <TextView
+            android:id="@+id/txt_house_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_house_name"
+            android:text=" منطقه"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textSize="14sp"
+            android:gravity="right"
+            android:textColor="@color/gray500"
+            android:drawableRight="@drawable/placeholder"
+            android:transitionName="houseZone"/>
+        <TextView
+            android:id="@+id/txt_house_visited_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_house_zone"
+            android:text=" 170 بازدید"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:textColor="@color/gray500"
+            android:drawableRight="@drawable/view"
+            android:transitionName="houseVisitedCount"/>
+
+        <Button
+            android:id="@+id/btn_show_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مشاهده جزییات"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/rounded_blue_style"
+            android:layout_below="@+id/txt_house_visited_count"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
