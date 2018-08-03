@@ -1,25 +1,45 @@
 package mohamadamin.soft.com.rentalhouseproject.Models;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import mohamadamin.soft.com.rentalhouseproject.R;
 
 public class SecondaryHouse
 {
+    public static ArrayList<SecondaryHouse> createHouses(int numberOfHouses)
+    {
+        ArrayList<SecondaryHouse> houses = new ArrayList<>();
+        for(int i=0; i<numberOfHouses; i++)
+        {
+            houses.add(new SecondaryHouse(
+                    "خانه زیبا شماره "+i,
+                    "دیروز",
+                    "ظفر",
+                    R.drawable.pic3,
+                    "مجانی",
+                    "360,000"
+
+            ));
+        }
+
+        return houses;
+    }
+
     private String title;
     private String dateOfRegister;
     private String zone;
+    private String mortgage;
+    private String monthlyRent;
     private int photo;
-    private int mortgage;
-    private int monthlyRent;
 
 
     public SecondaryHouse()
     {
     }
 
-    public SecondaryHouse(String title, String dateOfRegister, String zone, int photo, int mortgage, int monthlyRent)
+    public SecondaryHouse(String title, String dateOfRegister, String zone, int photo, String mortgage, String monthlyRent)
     {
         this.title = title;
         this.dateOfRegister = dateOfRegister;
@@ -49,12 +69,12 @@ public class SecondaryHouse
         return photo;
     }
 
-    public int getMortgage()
+    public String getMortgage()
     {
         return mortgage;
     }
 
-    public int getMonthlyRent()
+    public String getMonthlyRent()
     {
         return monthlyRent;
     }
@@ -80,12 +100,12 @@ public class SecondaryHouse
         this.photo = photo;
     }
 
-    public void setMortgage(int mortgage)
+    public void setMortgage(String mortgage)
     {
         this.mortgage = mortgage;
     }
 
-    public void setMonthlyRent(int monthlyRent)
+    public void setMonthlyRent(String monthlyRent)
     {
         this.monthlyRent = monthlyRent;
     }

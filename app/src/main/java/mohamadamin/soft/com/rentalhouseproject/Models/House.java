@@ -10,9 +10,9 @@ public class House
     private String zone;
     private String fixedNumber;
     private String phoneNumber;
+    private String mortgage;
+    private String monthlyRent;
     private int type;
-    private int mortgage;
-    private int monthlyRent;
     private int photo;
     private int visitedCount;
     private long latitude;
@@ -23,7 +23,7 @@ public class House
     {
     }
 
-    public House(String title, String dateOfRegister, String address, String description, String benefits, String zone, String fixedNumber, String phoneNumber, int type, int mortgage, int monthlyRent, int photo, int visitedCount, long latitude, long longitude)
+    public House(String title, String dateOfRegister, String address, String description, String benefits, String zone, String fixedNumber, String phoneNumber, int type, String mortgage, String monthlyRent, int photo, int visitedCount, long latitude, long longitude)
     {
         this.title = title;
         this.dateOfRegister = dateOfRegister;
@@ -88,12 +88,12 @@ public class House
         return type;
     }
 
-    public int getMortgage()
+    public String getMortgage()
     {
         return mortgage;
     }
 
-    public int getMonthlyRent()
+    public String getMonthlyRent()
     {
         return monthlyRent;
     }
@@ -164,12 +164,12 @@ public class House
         this.type = type;
     }
 
-    public void setMortgage(int mortgage)
+    public void setMortgage(String mortgage)
     {
         this.mortgage = mortgage;
     }
 
-    public void setMonthlyRent(int monthlyRent)
+    public void setMonthlyRent(String monthlyRent)
     {
         this.monthlyRent = monthlyRent;
     }

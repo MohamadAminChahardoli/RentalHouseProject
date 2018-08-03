@@ -16,9 +16,10 @@ public class DetailActivity extends AppCompatActivity
 {
 
     private ImageView ImgMainHousePhoto;
-    private TextView TxtHouseName;
-    private TextView TxtHouseZone;
-    private TextView TxtHouseVisitedCount;
+    private TextView TxtHouseTitle;
+    private TextView TxtHouseZoneAndTime;
+    private TextView TxtHouseMortgage;
+    private TextView TxtHouseMonthlyRent;
 
     @Override
     protected void attachBaseContext(Context newBase)
@@ -36,18 +37,20 @@ public class DetailActivity extends AppCompatActivity
         Bundle bundle=getIntent().getExtras();
 
         ImgMainHousePhoto.setImageResource(bundle.getInt("house_photo"));
-        TxtHouseName.setText(bundle.getString("house_name"));
-        TxtHouseVisitedCount.setText(bundle.getString("house_visited_count"));
+        TxtHouseTitle.setText(bundle.getString("house_title"));
+        TxtHouseZoneAndTime.setText(bundle.getString("house_zone_and_time"));
+        TxtHouseMortgage.setText(bundle.getString("house_mortgage"));
+        TxtHouseMonthlyRent.setText(bundle.getString("house_monthly_rent"));
+
     }
 
     private void initializeComponent()
     {
-        ComponentInitializer ci = new ComponentInitializer(this);
-
-        ImgMainHousePhoto = ci.initializeComponent(R.id.img_house_main_photo_detail);
-        TxtHouseName = ci.initializeComponent(R.id.txt_house_name_detail);
-        TxtHouseZone = ci.initializeComponent(R.id.txt_house_zone_detail);
-        TxtHouseVisitedCount = ci.initializeComponent(R.id.txt_house_visited_count_detail);
+        ImgMainHousePhoto = findViewById(R.id.img_house_main_photo_detail);
+        TxtHouseTitle = findViewById(R.id.txt_house_title_detail);
+        TxtHouseZoneAndTime = findViewById(R.id.txt_house_zone_and_registered_time_detail);
+        TxtHouseMortgage = findViewById(R.id.txt_house_mortgage_detail);
+        TxtHouseMonthlyRent = findViewById(R.id.txt_house_monthly_rent_detail);
     }
 
     public void finishActivity(View view)

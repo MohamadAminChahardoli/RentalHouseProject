@@ -2,6 +2,7 @@ package mohamadamin.soft.com.rentalhouseproject.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
@@ -21,11 +22,14 @@ import mohamadamin.soft.com.rentalhouseproject.UtilityClasses.ComponentInitializ
 
 public class HouseItemFragment extends Fragment implements View.OnClickListener
 {
-    private ImageView imgHousePhoto;
-    private TextView txtHouseName;
-    private TextView txtHouseZone;
-    private TextView txtHouseVisitedCount;
-    private Button btnShowItem;
+    private ImageView ImgHousePhoto;
+    private TextView TxtHouseTitle;
+    private TextView TxtHouseZoneAndRegisteredTime;
+    private TextView TxtHouseMortgage;
+    private TextView TxtHouseMortgageLabel;
+    private TextView TxtHouseMonthlyRent;
+    private TextView TxtHouseMonthlyRentLabel;
+    private Button BtnShowItem;
 
 
     @Override
@@ -46,22 +50,24 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
 
     private void initializeComponent(View view)
     {
-        ComponentInitializer componentInitializer = new ComponentInitializer(view);
-
-        imgHousePhoto = componentInitializer.initializeFragmentsComponent(R.id.img_house_main_photo);
-        txtHouseName = componentInitializer.initializeFragmentsComponent(R.id.txt_house_name);
-        txtHouseZone = componentInitializer.initializeFragmentsComponent(R.id.txt_house_zone);
-        txtHouseVisitedCount = componentInitializer.initializeFragmentsComponent(R.id.txt_house_visited_count);
-        btnShowItem = componentInitializer.initializeFragmentsComponent(R.id.btn_show_item);
+        ImgHousePhoto = view.findViewById(R.id.img_house_main_photo);
+        TxtHouseTitle = view.findViewById(R.id.txt_house_title);
+        TxtHouseZoneAndRegisteredTime = view.findViewById(R.id.txt_house_zone_and_registered_time);
+        TxtHouseMortgage = view.findViewById(R.id.txt_house_mortgage);
+        TxtHouseMortgageLabel = view.findViewById(R.id.txt_house_mortgage_label);
+        TxtHouseMonthlyRent = view.findViewById(R.id.txt_house_monthly_rent);
+        TxtHouseMonthlyRentLabel = view.findViewById(R.id.txt_house_monthly_rent_label);
+        BtnShowItem = view.findViewById(R.id.btn_show_item);
     }
 
     private void bindViewsContents()
     {
-        imgHousePhoto.setImageResource(getArguments().getInt("house_photo"));
-        txtHouseName.setText(getArguments().getString("house_name"));
-        txtHouseVisitedCount.setText(getArguments().getString("house_visited_count"));
-        btnShowItem.setOnClickListener(this);
-
+        ImgHousePhoto.setImageResource(getArguments().getInt("house_photo"));
+        TxtHouseTitle.setText(getArguments().getString("house_title"));
+        TxtHouseZoneAndRegisteredTime.setText(getArguments().getString("house_zone_and_time"));
+        TxtHouseMortgage.setText(getArguments().getString("house_mortgage"));
+        TxtHouseMonthlyRent.setText(getArguments().getString("house_monthly_rent"));
+        BtnShowItem.setOnClickListener(this);
     }
 
     public static Fragment getInstance(SecondaryHouse houseModel)
@@ -74,9 +80,11 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
     private static Bundle createArguments(SecondaryHouse houseModel)
     {
         Bundle args=new Bundle();
-        args.putString("house_name",houseModel.getName());
+        args.putString("house_title",houseModel.getTitle());
         args.putInt("house_photo",houseModel.getPhoto());
-        args.putString("house_visited_count",houseModel.getVisitedCount()+"");
+        args.putString("house_zone_and_time",houseModel.getDateOfRegister() + " در " + houseModel.getZone());
+        args.putString("house_mortgage",houseModel.getMortgage());
+        args.putString("house_monthly_rent",houseModel.getMonthlyRent());
         return args;
     }
 
@@ -92,13 +100,16 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
     {
         Intent detailIntent=new Intent(getActivity(), DetailActivity.class);
         detailIntent.putExtras(getArguments());
-        Pair<View, String> p1 = Pair.create((View)imgHousePhoto, "mainHousePhoto");
-        Pair<View, String> p2 = Pair.create((View)txtHouseName, "houseName");
-        Pair<View, String> p3 = Pair.create((View)txtHouseZone, "houseZone");
-        Pair<View, String> p4 = Pair.create((View)txtHouseVisitedCount, "houseVisitedCount");
+        Pair<View, String> p1 = Pair.create((View)ImgHousePhoto, "mainHousePhoto");
+        Pair<View, String> p2 = Pair.create((View)TxtHouseTitle, "houseTitle");
+        Pair<View, String> p3 = Pair.create((View)TxtHouseZoneAndRegisteredTime, "houseZoneAndTime");
+        Pair<View, String> p4 = Pair.create((View)TxtHouseMortgage, "houseMortgage");
+        Pair<View, String> p5 = Pair.create((View)TxtHouseMortgageLabel, "houseMortgageLabel");
+        Pair<View, String> p6 = Pair.create((View)TxtHouseMonthlyRent, "houseMonthlyRent");
+        Pair<View, String> p7 = Pair.create((View)TxtHouseMonthlyRentLabel, "houseMonthlyRentLabel");
 
         ActivityOptionsCompat options = ActivityOptionsCompat.
-                makeSceneTransitionAnimation(getActivity(), p1, p2, p3,p4);
+                makeSceneTransitionAnimation(getActivity(), p1, p2, p3, p4, p5, p6, p7);
 
         startActivity(detailIntent, options.toBundle());
     }

@@ -85,12 +85,9 @@ public class MainActivity extends AppCompatActivity
 
     private void initializeComponents()
     {
-        ComponentInitializer componentInitializer=
-                new ComponentInitializer(this);
-
-        MainViewPager = componentInitializer.initializeComponent(R.id.view_pager_main);
-        BottomSheetFilter = componentInitializer.initializeComponent(R.id.linear_filter);
-        SBChangeItems = componentInitializer.initializeComponent(R.id.sb_change_items);
+        MainViewPager = findViewById(R.id.view_pager_main);
+        BottomSheetFilter = findViewById(R.id.linear_filter);
+        SBChangeItems = findViewById(R.id.sb_change_items);
     }
 
     private void setupViewPager()
