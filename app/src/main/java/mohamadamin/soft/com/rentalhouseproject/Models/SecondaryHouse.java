@@ -19,7 +19,9 @@ public class SecondaryHouse
                     "ظفر",
                     R.drawable.pic3,
                     "مجانی",
-                    "360,000"
+                    "360,000",
+                    1,
+                    123
 
             ));
         }
@@ -33,13 +35,15 @@ public class SecondaryHouse
     private String mortgage;
     private String monthlyRent;
     private int photo;
+    private int type;
+    private int visitedCount;
 
 
     public SecondaryHouse()
     {
     }
 
-    public SecondaryHouse(String title, String dateOfRegister, String zone, int photo, String mortgage, String monthlyRent)
+    public SecondaryHouse(String title, String dateOfRegister, String zone, int photo, String mortgage, String monthlyRent, int type, int visitedCount)
     {
         this.title = title;
         this.dateOfRegister = dateOfRegister;
@@ -47,6 +51,8 @@ public class SecondaryHouse
         this.photo = photo;
         this.mortgage = mortgage;
         this.monthlyRent = monthlyRent;
+        this.type = type;
+        this.visitedCount = visitedCount;
     }
 
     public String getTitle()
@@ -79,6 +85,17 @@ public class SecondaryHouse
         return monthlyRent;
     }
 
+    public int getType()
+    {
+        return type;
+    }
+
+    public int getVisitedCount()
+    {
+        return visitedCount;
+    }
+
+
 
     public void setTitle(String title)
     {
@@ -108,6 +125,16 @@ public class SecondaryHouse
     public void setMonthlyRent(String monthlyRent)
     {
         this.monthlyRent = monthlyRent;
+    }
+
+    public void setType(int type)
+    {
+        this.type = type;
+    }
+
+    public void setVisitedCount(int visitedCount)
+    {
+        this.visitedCount = visitedCount;
     }
 }
 

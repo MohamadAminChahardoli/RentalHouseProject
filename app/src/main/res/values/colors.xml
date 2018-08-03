@@ -8,5 +8,7 @@
     <color name="gray900">#212121</color>
     <color name="gray800">#424242</color>
     <color name="gray500">#757575</color>
+    <color name="gray400">#bdbdbd</color>
+    <color name="gray300">#e0e0e0</color>
     <color name="app_ripple_color">#2196F3</color>
 </resources>
