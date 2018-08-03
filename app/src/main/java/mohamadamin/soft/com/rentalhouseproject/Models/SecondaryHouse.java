@@ -7,24 +7,41 @@ import mohamadamin.soft.com.rentalhouseproject.R;
 
 public class SecondaryHouse
 {
-    private String name;
+    private String title;
+    private String dateOfRegister;
+    private String zone;
     private int photo;
-    private int visitedCount;
+    private int mortgage;
+    private int monthlyRent;
+
 
     public SecondaryHouse()
     {
     }
 
-    public SecondaryHouse(String name, int photo, int visitedCount)
+    public SecondaryHouse(String title, String dateOfRegister, String zone, int photo, int mortgage, int monthlyRent)
     {
-        this.name = name;
+        this.title = title;
+        this.dateOfRegister = dateOfRegister;
+        this.zone = zone;
         this.photo = photo;
-        this.visitedCount = visitedCount;
+        this.mortgage = mortgage;
+        this.monthlyRent = monthlyRent;
     }
 
-    public String getName()
+    public String getTitle()
     {
-        return name;
+        return title;
+    }
+
+    public String getDateOfRegister()
+    {
+        return dateOfRegister;
+    }
+
+    public String getZone()
+    {
+        return zone;
     }
 
     public int getPhoto()
@@ -32,14 +49,30 @@ public class SecondaryHouse
         return photo;
     }
 
-    public int getVisitedCount()
+    public int getMortgage()
     {
-        return visitedCount;
+        return mortgage;
     }
 
-    public void setName(String name)
+    public int getMonthlyRent()
     {
-        this.name = name;
+        return monthlyRent;
+    }
+
+
+    public void setTitle(String title)
+    {
+        this.title = title;
+    }
+
+    public void setDateOfRegister(String dateOfRegister)
+    {
+        this.dateOfRegister = dateOfRegister;
+    }
+
+    public void setZone(String zone)
+    {
+        this.zone = zone;
     }
 
     public void setPhoto(int photo)
@@ -47,33 +80,14 @@ public class SecondaryHouse
         this.photo = photo;
     }
 
-    public void setVisitedCount(int visitedCount)
+    public void setMortgage(int mortgage)
     {
-        this.visitedCount = visitedCount;
+        this.mortgage = mortgage;
     }
 
-    public static ArrayList<SecondaryHouse> createHouses(int numberOfHouses)
+    public void setMonthlyRent(int monthlyRent)
     {
-        ArrayList<SecondaryHouse> housesList = new ArrayList<SecondaryHouse>();
-        for (int i = 1; i <= numberOfHouses; i++)
-        {
-            housesList.add(new SecondaryHouse(" خانه زیبا "+i, R.drawable.pic3,i+170));
-        }
-        return housesList;
-    }
-
-    private static String makeName()
-    {
-        ArrayList<String> list=new ArrayList<>();
-        list.add(" زیبا و جا دار با ویوو بسیار عالی در مرکز شهر");
-        list.add(" زیبا و جا دار با ویوو بسیار عالی در مرکز شهرزیبا و جا دار با ویوو بسیار عالی در مرکز شهر");
-        list.add(" زیبا و جا دیوو بسیار عالی در مرکز شهربسیار عالی در مرکز شهر");
-        list.add(" زیبا و جا دار و بسیار عال شهربسیار عالی در مرکز شهربسیار عالی در مرکز شهربسیار عالی در مرکز شهربسیار عالی در مرکز شهر");
-        list.add(" زیبا و جا دار باسیار عالی در مرکز شهربسیار عالی در مرکز شهربسیار عالی در مرکز شهر");
-
-        Random rnd=new Random();
-        int random= rnd.nextInt(5);
-        return list.get(random);
+        this.monthlyRent = monthlyRent;
     }
 }
 

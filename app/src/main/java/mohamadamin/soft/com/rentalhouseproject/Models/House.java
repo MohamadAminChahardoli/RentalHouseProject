@@ -2,11 +2,15 @@ package mohamadamin.soft.com.rentalhouseproject.Models;
 
 public class House
 {
-    private String name;
+    private String title;
     private String dateOfRegister;
     private String address;
     private String description;
     private String benefits;
+    private String zone;
+    private String fixedNumber;
+    private String phoneNumber;
+    private int type;
     private int mortgage;
     private int monthlyRent;
     private int photo;
@@ -18,24 +22,30 @@ public class House
     public House()
     {
     }
-    public House(String name, String dateOfRegister, String address, String description, String benefits, int mortgage, int monthlyRent, int photo,int visitedCount, long latitude, long longitude)
+
+    public House(String title, String dateOfRegister, String address, String description, String benefits, String zone, String fixedNumber, String phoneNumber, int type, int mortgage, int monthlyRent, int photo, int visitedCount, long latitude, long longitude)
     {
-        this.name = name;
+        this.title = title;
         this.dateOfRegister = dateOfRegister;
         this.address = address;
         this.description = description;
         this.benefits = benefits;
+        this.zone = zone;
+        this.fixedNumber = fixedNumber;
+        this.phoneNumber = phoneNumber;
+        this.type = type;
         this.mortgage = mortgage;
         this.monthlyRent = monthlyRent;
         this.photo = photo;
-        this.visitedCount=visitedCount;
+        this.visitedCount = visitedCount;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    public String getName()
+
+    public String getTitle()
     {
-        return name;
+        return title;
     }
 
     public String getDateOfRegister()
@@ -58,6 +68,26 @@ public class House
         return benefits;
     }
 
+    public String getZone()
+    {
+        return zone;
+    }
+
+    public String getFixedNumber()
+    {
+        return fixedNumber;
+    }
+
+    public String getPhoneNumber()
+    {
+        return phoneNumber;
+    }
+
+    public int getType()
+    {
+        return type;
+    }
+
     public int getMortgage()
     {
         return mortgage;
@@ -73,7 +103,10 @@ public class House
         return photo;
     }
 
-    public int getVisitedCount() {return  visitedCount;}
+    public int getVisitedCount()
+    {
+        return visitedCount;
+    }
 
     public long getLatitude()
     {
@@ -86,10 +119,9 @@ public class House
     }
 
 
-
-    public void setName(String name)
+    public void setTitle(String title)
     {
-        this.name = name;
+        this.title = title;
     }
 
     public void setDateOfRegister(String dateOfRegister)
@@ -112,6 +144,26 @@ public class House
         this.benefits = benefits;
     }
 
+    public void setZone(String zone)
+    {
+        this.zone = zone;
+    }
+
+    public void setFixedNumber(String fixedNumber)
+    {
+        this.fixedNumber = fixedNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setType(int type)
+    {
+        this.type = type;
+    }
+
     public void setMortgage(int mortgage)
     {
         this.mortgage = mortgage;
@@ -126,7 +178,11 @@ public class House
     {
         this.photo = photo;
     }
-    public void setVisitedCount(int visitedCount) {this.visitedCount=visitedCount;}
+
+    public void setVisitedCount(int visitedCount)
+    {
+        this.visitedCount = visitedCount;
+    }
 
     public void setLatitude(long latitude)
     {
