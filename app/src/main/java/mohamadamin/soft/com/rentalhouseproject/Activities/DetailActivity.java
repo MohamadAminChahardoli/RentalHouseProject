@@ -8,6 +8,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import mohamadamin.soft.com.rentalhouseproject.Adapters.CostAdapter;
+import mohamadamin.soft.com.rentalhouseproject.Dialogs.CostsViewerDialog;
+import mohamadamin.soft.com.rentalhouseproject.Models.BedCost;
 import mohamadamin.soft.com.rentalhouseproject.R;
 import mohamadamin.soft.com.rentalhouseproject.UtilityClasses.ComponentInitializer;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -20,6 +25,10 @@ public class DetailActivity extends AppCompatActivity
     private TextView TxtHouseZoneAndTime;
     private TextView TxtHouseMortgage;
     private TextView TxtHouseMonthlyRent;
+    private Button BtnShowCosts;
+    private Button BtnShowOnMap;
+    private Button BtnCallToOwner;
+
 
     @Override
     protected void attachBaseContext(Context newBase)
@@ -51,10 +60,21 @@ public class DetailActivity extends AppCompatActivity
         TxtHouseZoneAndTime = findViewById(R.id.txt_house_zone_and_registered_time_detail);
         TxtHouseMortgage = findViewById(R.id.txt_house_mortgage_detail);
         TxtHouseMonthlyRent = findViewById(R.id.txt_house_monthly_rent_detail);
+        BtnShowCosts = findViewById(R.id.btn_show_cost);
+        BtnShowOnMap = findViewById(R.id.btn_show_on_map);
+        BtnCallToOwner = findViewById(R.id.btn_call_to_owner);
     }
 
     public void finishActivity(View view)
     {
         supportFinishAfterTransition();
+    }
+
+
+    public void showCosts(View view)
+    {
+        CostsViewerDialog dialog = new CostsViewerDialog();
+        //dialog.setCancelable(false);
+        dialog.show(getSupportFragmentManager(),"");
     }
 }

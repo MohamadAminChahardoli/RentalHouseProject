@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class House
 {
-    private String title;
-    private String dateOfRegister;
-    private String address;
-    private String description;
-    private String benefits;
-    private String zone;
-    private String fixedNumber;
-    private String phoneNumber;
-    private String mortgage;
-    private String monthlyRent;
-    private int type;
-    private int photo;
-    private int visitedCount;
-    private long latitude;
+    private String Title;
+    private String DateOfRegister;
+    private String Address;
+    private String Description;
+    private String Benefits;
+    private String Zone;
+    private String FixedNumber;
+    private String PhoneNumber;
+    private String Mortgage;
+    private String MonthlyRent;
+    private int Type;
+    private int Photo;
+    private int VisitedCount;
+    private long Latitude;
     private long longitude;
     private ArrayList<BedCost> BedsInstance;
 
@@ -26,94 +26,100 @@ public class House
     {
     }
 
-    public House(String title, String dateOfRegister, String address, String description, String benefits, String zone, String fixedNumber, String phoneNumber, int type, String mortgage, String monthlyRent, int photo, int visitedCount, long latitude, long longitude)
+    public House(String title, String dateOfRegister, String address, String description,
+                 String benefits, String zone, String fixedNumber, String phoneNumber,
+                 String mortgage, String monthlyRent, int type, int photo, int visitedCount,
+                 long latitude, long longitude, ArrayList<BedCost> bedsInstance)
     {
-        this.title = title;
-        this.dateOfRegister = dateOfRegister;
-        this.address = address;
-        this.description = description;
-        this.benefits = benefits;
-        this.zone = zone;
-        this.fixedNumber = fixedNumber;
-        this.phoneNumber = phoneNumber;
-        this.type = type;
-        this.mortgage = mortgage;
-        this.monthlyRent = monthlyRent;
-        this.photo = photo;
-        this.visitedCount = visitedCount;
-        this.latitude = latitude;
+        Title = title;
+        DateOfRegister = dateOfRegister;
+        Address = address;
+        Description = description;
+        Benefits = benefits;
+        Zone = zone;
+        FixedNumber = fixedNumber;
+        PhoneNumber = phoneNumber;
+        Mortgage = mortgage;
+        MonthlyRent = monthlyRent;
+        Type = type;
+        Photo = photo;
+        VisitedCount = visitedCount;
+        Latitude = latitude;
         this.longitude = longitude;
+        BedsInstance = bedsInstance;
     }
+
+
 
 
     public String getTitle()
     {
-        return title;
+        return Title;
     }
 
     public String getDateOfRegister()
     {
-        return dateOfRegister;
+        return DateOfRegister;
     }
 
     public String getAddress()
     {
-        return address;
+        return Address;
     }
 
     public String getDescription()
     {
-        return description;
+        return Description;
     }
 
     public String getBenefits()
     {
-        return benefits;
+        return Benefits;
     }
 
     public String getZone()
     {
-        return zone;
+        return Zone;
     }
 
     public String getFixedNumber()
     {
-        return fixedNumber;
+        return FixedNumber;
     }
 
     public String getPhoneNumber()
     {
-        return phoneNumber;
-    }
-
-    public int getType()
-    {
-        return type;
+        return PhoneNumber;
     }
 
     public String getMortgage()
     {
-        return mortgage;
+        return Mortgage;
     }
 
     public String getMonthlyRent()
     {
-        return monthlyRent;
+        return MonthlyRent;
+    }
+
+    public int getType()
+    {
+        return Type;
     }
 
     public int getPhoto()
     {
-        return photo;
+        return Photo;
     }
 
     public int getVisitedCount()
     {
-        return visitedCount;
+        return VisitedCount;
     }
 
     public long getLatitude()
     {
-        return latitude;
+        return Latitude;
     }
 
     public long getLongitude()
@@ -121,79 +127,89 @@ public class House
         return longitude;
     }
 
+    public ArrayList<BedCost> getBedsInstance()
+    {
+        return BedsInstance;
+    }
+
 
     public void setTitle(String title)
     {
-        this.title = title;
+        Title = title;
     }
 
     public void setDateOfRegister(String dateOfRegister)
     {
-        this.dateOfRegister = dateOfRegister;
+        DateOfRegister = dateOfRegister;
     }
 
     public void setAddress(String address)
     {
-        this.address = address;
+        Address = address;
     }
 
     public void setDescription(String description)
     {
-        this.description = description;
+        Description = description;
     }
 
     public void setBenefits(String benefits)
     {
-        this.benefits = benefits;
+        Benefits = benefits;
     }
 
     public void setZone(String zone)
     {
-        this.zone = zone;
+        Zone = zone;
     }
 
     public void setFixedNumber(String fixedNumber)
     {
-        this.fixedNumber = fixedNumber;
+        FixedNumber = fixedNumber;
     }
 
     public void setPhoneNumber(String phoneNumber)
     {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public void setType(int type)
-    {
-        this.type = type;
+        PhoneNumber = phoneNumber;
     }
 
     public void setMortgage(String mortgage)
     {
-        this.mortgage = mortgage;
+        Mortgage = mortgage;
     }
 
     public void setMonthlyRent(String monthlyRent)
     {
-        this.monthlyRent = monthlyRent;
+        MonthlyRent = monthlyRent;
+    }
+
+    public void setType(int type)
+    {
+        Type = type;
     }
 
     public void setPhoto(int photo)
     {
-        this.photo = photo;
+        Photo = photo;
     }
 
     public void setVisitedCount(int visitedCount)
     {
-        this.visitedCount = visitedCount;
+        VisitedCount = visitedCount;
     }
 
     public void setLatitude(long latitude)
     {
-        this.latitude = latitude;
+        Latitude = latitude;
     }
 
     public void setLongitude(long longitude)
     {
         this.longitude = longitude;
+    }
+
+    public void setBedsInstance(ArrayList<BedCost> bedsInstance)
+    {
+        BedsInstance = bedsInstance;
     }
 }

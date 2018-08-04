@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">RentalHouseProject</string>
+    <string name="call_to_owner">تماس با آگهی دهنده</string>
+    <string name="show_beds_cost">مشاهده قیمت تخت ها</string>
+    <string name="Show_on_map">مشاهده روی نقشه</string>
+    <string name="back">بازگشت</string>
+    <string name="beds_cost">قیمت تخت ها</string>
 
     <string-array name="provinces">
         <item>استان</item>

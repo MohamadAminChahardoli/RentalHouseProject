@@ -1,8 +1,6 @@
 package mohamadamin.soft.com.rentalhouseproject.Models;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import mohamadamin.soft.com.rentalhouseproject.R;
 
@@ -29,14 +27,14 @@ public class SecondaryHouse
         return houses;
     }
 
-    private String title;
-    private String dateOfRegister;
-    private String zone;
-    private String mortgage;
-    private String monthlyRent;
-    private int photo;
-    private int type;
-    private int visitedCount;
+    private String Title;
+    private String DateOfRegister;
+    private String Zone;
+    private String Mortgage;
+    private String MonthlyRent;
+    private int Photo;
+    private int Type;
+    private int VisitedCount;
 
 
     public SecondaryHouse()
@@ -45,96 +43,97 @@ public class SecondaryHouse
 
     public SecondaryHouse(String title, String dateOfRegister, String zone, int photo, String mortgage, String monthlyRent, int type, int visitedCount)
     {
-        this.title = title;
-        this.dateOfRegister = dateOfRegister;
-        this.zone = zone;
-        this.photo = photo;
-        this.mortgage = mortgage;
-        this.monthlyRent = monthlyRent;
-        this.type = type;
-        this.visitedCount = visitedCount;
+        this.Title = title;
+        this.DateOfRegister = dateOfRegister;
+        this.Zone = zone;
+        this.Photo = photo;
+        this.Mortgage = mortgage;
+        this.MonthlyRent = monthlyRent;
+        this.Type = type;
+        this.VisitedCount = visitedCount;
     }
 
     public String getTitle()
     {
-        return title;
+        return Title;
     }
 
     public String getDateOfRegister()
     {
-        return dateOfRegister;
+        return DateOfRegister;
     }
 
     public String getZone()
     {
-        return zone;
+        return Zone;
     }
 
     public int getPhoto()
     {
-        return photo;
+        return Photo;
     }
 
     public String getMortgage()
     {
-        return mortgage;
+        return Mortgage;
     }
 
     public String getMonthlyRent()
     {
-        return monthlyRent;
+        return MonthlyRent;
     }
 
     public int getType()
     {
-        return type;
+        return Type;
     }
 
     public int getVisitedCount()
     {
-        return visitedCount;
+        return VisitedCount;
     }
+
 
 
 
     public void setTitle(String title)
     {
-        this.title = title;
+        this.Title = title;
     }
 
     public void setDateOfRegister(String dateOfRegister)
     {
-        this.dateOfRegister = dateOfRegister;
+        this.DateOfRegister = dateOfRegister;
     }
 
     public void setZone(String zone)
     {
-        this.zone = zone;
+        this.Zone = zone;
     }
 
     public void setPhoto(int photo)
     {
-        this.photo = photo;
+        this.Photo = photo;
     }
 
     public void setMortgage(String mortgage)
     {
-        this.mortgage = mortgage;
+        this.Mortgage = mortgage;
     }
 
     public void setMonthlyRent(String monthlyRent)
     {
-        this.monthlyRent = monthlyRent;
+        this.MonthlyRent = monthlyRent;
     }
 
     public void setType(int type)
     {
-        this.type = type;
+        this.Type = type;
     }
 
     public void setVisitedCount(int visitedCount)
     {
-        this.visitedCount = visitedCount;
+        this.VisitedCount = visitedCount;
     }
 }
 
