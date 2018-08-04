@@ -1,5 +1,7 @@
 package mohamadamin.soft.com.rentalhouseproject.Models;
 
+import java.util.ArrayList;
+
 public class House
 {
     private String title;
@@ -17,6 +19,7 @@ public class House
     private int visitedCount;
     private long latitude;
     private long longitude;
+    private ArrayList<BedCost> BedsInstance;
 
 
     public House()
