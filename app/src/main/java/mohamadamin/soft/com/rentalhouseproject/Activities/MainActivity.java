@@ -1,6 +1,7 @@
 package mohamadamin.soft.com.rentalhouseproject.Activities;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,12 +16,13 @@ import android.widget.SeekBar;
 import com.yarolegovich.slidingrootnav.SlideGravity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
-import com.yarolegovich.slidingrootnav.callback.DragListener;
 import com.yarolegovich.slidingrootnav.callback.DragStateListener;
 
 import java.util.ArrayList;
 
+import mohamadamin.soft.com.rentalhouseproject.Adapters.MainSliderPagerAdapter;
 import mohamadamin.soft.com.rentalhouseproject.Models.SecondaryHouse;
+import mohamadamin.soft.com.rentalhouseproject.Models.SliderModel;
 import mohamadamin.soft.com.rentalhouseproject.PagerTransformers.SimpleCardsPagerTransformer;
 import mohamadamin.soft.com.rentalhouseproject.Adapters.HousesViewPagerAdapter;
 import mohamadamin.soft.com.rentalhouseproject.R;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity
 {
 
     private ViewPager MainViewPager;
+    private ViewPager MainSliderViewPager;
     private AppCompatSeekBar SBChangeItems;
     private LinearLayout BottomSheetFilter;
     private BottomSheetBehavior BottomSheetBehavior;
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity
     private SlidingRootNav DrawerMenu;
     private SlidingRootNav SlidingFilter;
     private boolean IsSlidingOpened = false;
+    private int currentPage = 0;
+    private Handler SliderHandler;
 
     @Override
     protected void attachBaseContext(Context newBase)
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initializeComponents();
+        setupSlider();
         setupViewPager();
         setupSlidingNavigationDrawer();
         setupSlidingFilter();
@@ -81,6 +87,15 @@ public class MainActivity extends AppCompatActivity
 
 
 
+        SliderHandler = new Handler();
+        SliderHandler.post(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                slide();
+            }
+        });
 
 
 
@@ -177,6 +192,7 @@ public class MainActivity extends AppCompatActivity
     private void initializeComponents()
     {
         MainViewPager = findViewById(R.id.view_pager_main);
+        MainSliderViewPager = findViewById(R.id.view_pager_main_slider);
         BottomSheetFilter = findViewById(R.id.linear_filter);
         SBChangeItems = findViewById(R.id.sb_change_items);
     }
@@ -188,7 +204,9 @@ public class MainActivity extends AppCompatActivity
         MainViewPager.setPageMargin(pageMargin);
         int viewPagerPadding = calculatePagePadding(pageMargin);
         MainViewPager.setPadding(viewPagerPadding, 0, viewPagerPadding, 0);
-        MainViewPager.setAdapter(createAdapterForPager());
+        FragmentPagerAdapter adapterViewPager=new HousesViewPagerAdapter
+                (getSupportFragmentManager(),getListOfHouses(20));
+        MainViewPager.setAdapter(adapterViewPager);
         MainViewPager.setPageTransformer(false,new SimpleCardsPagerTransformer());
 
         MainViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
@@ -213,12 +231,52 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    private FragmentPagerAdapter createAdapterForPager()
+    private void setupSlider()
     {
-        FragmentPagerAdapter adapterViewPager=new HousesViewPagerAdapter
-                (getSupportFragmentManager(),getListOfHouses(20));
-        return adapterViewPager;
+        FragmentPagerAdapter adapterViewPager=new MainSliderPagerAdapter
+                (getSupportFragmentManager(), SliderModel.createBanners());
+        MainSliderViewPager.setAdapter(adapterViewPager);
+        MainSliderViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
+        {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+            {
+
+            }
+
+            @Override
+            public void onPageSelected(int position)
+            {
+                currentPage = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state)
+            {
+
+            }
+        });
     }
+
+    private void slide()
+    {
+        if (currentPage == MainSliderViewPager.getAdapter().getCount())
+        {
+            currentPage = 0;
+        }
+        MainSliderViewPager.setCurrentItem(currentPage++, true);
+        SliderHandler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                slide();
+            }
+        }, 4000);
+    }
+
+
+
 
     private ArrayList<SecondaryHouse> getListOfHouses(int numberOfHouses)
     {
@@ -229,13 +287,13 @@ public class MainActivity extends AppCompatActivity
     {
         float density = getResources().getDisplayMetrics().density;
         //int partialWidth = (int) (16 * density); // 16dp
-        int pageMargin = (int) (15 * density); // 15dp
+        int pageMargin = (int) (20 * density); // 15dp
         return pageMargin;
     }
 
     private int calculatePagePadding(int pageMargin)
     {
-        int viewPagerPadding = 60 + pageMargin;
+        int viewPagerPadding = 80 + pageMargin;
         return viewPagerPadding;
     }
 
