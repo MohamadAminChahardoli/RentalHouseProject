@@ -11,11 +11,11 @@ import android.support.v7.widget.AppCompatSeekBar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.Toolbar;
 
 import com.yarolegovich.slidingrootnav.SlideGravity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
+import com.yarolegovich.slidingrootnav.callback.DragListener;
 import com.yarolegovich.slidingrootnav.callback.DragStateListener;
 
 import java.util.ArrayList;
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity
     private BottomSheetDialog BottomSheetDialog;
     private SlidingRootNav DrawerMenu;
     private SlidingRootNav SlidingFilter;
+    private boolean IsSlidingOpened = false;
 
     @Override
     protected void attachBaseContext(Context newBase)
@@ -145,13 +146,18 @@ public class MainActivity extends AppCompatActivity
                         if (DrawerMenu.isMenuOpened())
                         {
                             DrawerMenu.closeMenu();
+                            IsSlidingOpened = true;
                         }
                     }
 
                     @Override
                     public void onDragEnd(boolean isMenuOpened)
                     {
-
+                        if (IsSlidingOpened)
+                        {
+                            SlidingFilter.closeMenu();
+                            IsSlidingOpened = false;
+                        }
                     }
                 })
                 .inject();
@@ -160,14 +166,14 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    private void initializeBottomSheetDialog()
+   /* private void initializeBottomSheetDialog()
     {
         BottomSheetDialog = new BottomSheetDialog(this);
         View sheetView = this.getLayoutInflater().inflate(R.layout.filter_bottom_sheet, null);
         BottomSheetDialog.setContentView(sheetView);
         BottomSheetDialog.setCancelable(false);
     }
-
+*/
     private void initializeComponents()
     {
         MainViewPager = findViewById(R.id.view_pager_main);
@@ -233,13 +239,13 @@ public class MainActivity extends AppCompatActivity
         return viewPagerPadding;
     }
 
-    private void initializeFilterBottomSheet()
+    /*private void initializeFilterBottomSheet()
     {
         BottomSheetBehavior = BottomSheetBehavior.from(BottomSheetFilter);
         BottomSheetBehavior.setPeekHeight(0);
-    }
+    }*/
 
-    public void showDialogForPerformFilters(View view)
+    /*public void showDialogForPerformFilters(View view)
     {
         BottomSheetDialog.show();
     }
@@ -247,7 +253,7 @@ public class MainActivity extends AppCompatActivity
     public void dismissFilterDialog(View view)
     {
         BottomSheetDialog.dismiss();
-    }
+    }*/
 
 
 
