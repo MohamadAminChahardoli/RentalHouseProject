@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="mohamadamin.soft.com.rentalhouseproject">
+
 
     <application
         android:name=".App.MyApplication"
@@ -20,10 +22,6 @@
         </activity>
 
         <activity android:name=".Activities.DetailActivity">
-        </activity>
-
-        <activity android:name=".MyActivity">
-
         </activity>
 
     </application>

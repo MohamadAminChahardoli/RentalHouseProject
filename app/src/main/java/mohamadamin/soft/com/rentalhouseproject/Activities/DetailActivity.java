@@ -1,20 +1,22 @@
 package mohamadamin.soft.com.rentalhouseproject.Activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.Locale;
 
 import mohamadamin.soft.com.rentalhouseproject.Adapters.CostAdapter;
-import mohamadamin.soft.com.rentalhouseproject.Dialogs.CostsViewerDialog;
 import mohamadamin.soft.com.rentalhouseproject.Models.BedCost;
 import mohamadamin.soft.com.rentalhouseproject.R;
-import mohamadamin.soft.com.rentalhouseproject.UtilityClasses.ComponentInitializer;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class DetailActivity extends AppCompatActivity
@@ -25,9 +27,10 @@ public class DetailActivity extends AppCompatActivity
     private TextView TxtHouseZoneAndTime;
     private TextView TxtHouseMortgage;
     private TextView TxtHouseMonthlyRent;
-    private Button BtnShowCosts;
-    private Button BtnShowOnMap;
-    private Button BtnCallToOwner;
+    private ListView ListViewCosts;
+    private LinearLayout CostsBottomSheet;
+    private BottomSheetBehavior SheetBehavior;
+
 
 
     @Override
@@ -51,6 +54,14 @@ public class DetailActivity extends AppCompatActivity
         TxtHouseMortgage.setText(bundle.getString("house_mortgage"));
         TxtHouseMonthlyRent.setText(bundle.getString("house_monthly_rent"));
 
+        setupCostsListView();
+        initializeBottomSheetBehavior();
+
+    }
+
+    private void initializeBottomSheetBehavior()
+    {
+        SheetBehavior = BottomSheetBehavior.from(CostsBottomSheet);
     }
 
     private void initializeComponent()
@@ -60,9 +71,14 @@ public class DetailActivity extends AppCompatActivity
         TxtHouseZoneAndTime = findViewById(R.id.txt_house_zone_and_registered_time_detail);
         TxtHouseMortgage = findViewById(R.id.txt_house_mortgage_detail);
         TxtHouseMonthlyRent = findViewById(R.id.txt_house_monthly_rent_detail);
-        BtnShowCosts = findViewById(R.id.btn_show_cost);
-        BtnShowOnMap = findViewById(R.id.btn_show_on_map);
-        BtnCallToOwner = findViewById(R.id.btn_call_to_owner);
+        CostsBottomSheet = findViewById(R.id.costs_bottom_sheet);
+        ListViewCosts = findViewById(R.id.list_view_costs);
+    }
+
+    private void setupCostsListView()
+    {
+        CostAdapter adapter = new CostAdapter(this, BedCost.createList());
+        ListViewCosts.setAdapter(adapter);
     }
 
     public void finishActivity(View view)
@@ -71,10 +87,34 @@ public class DetailActivity extends AppCompatActivity
     }
 
 
-    public void showCosts(View view)
+    public void showCostsBottomSheet(View view)
     {
-        CostsViewerDialog dialog = new CostsViewerDialog();
-        //dialog.setCancelable(false);
-        dialog.show(getSupportFragmentManager(),"");
+        SheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+    }
+
+    private void hideCostsBottomSheet()
+    {
+        SheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+    }
+
+    public void showOnGoogleMap(View view)
+    {
+        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", 51.46504, 35.63266);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        if (SheetBehavior.getState()==BottomSheetBehavior.STATE_EXPANDED)
+        {
+            hideCostsBottomSheet();
+        }
+        else
+        {
+            super.onBackPressed();
+        }
+
     }
 }

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="@android:color/white">
+    <RelativeLayout
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+
+    <ImageView
+        android:id="@+id/img_user_avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@drawable/ic_profile_user"/>
+
+    <TextView
+        android:id="@+id/txt_user_full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_user_avatar"
+        android:textColor="@color/gray800"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:text="محمدامین چهاردولی"/>
+
+    <Button
+        android:id="@+id/btn_user_log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txt_user_full_name"
+        android:background="?android:selectableItemBackground"
+        android:text="@string/log_out_user"
+        android:textColor="#ff0000"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/txt_div_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line_divider_style"
+        android:layout_below="@+id/btn_user_log_out"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_div_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_register_adds"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:text="@string/register_adds"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textColor="@color/drawer_icon_color"
+                android:drawableRight="@drawable/speaker"/>
+            <Button
+                android:id="@+id/btn_select_city"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:text="@string/select_city"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textColor="@color/drawer_icon_color"
+                android:drawableRight="@drawable/point_at"/>
+            <Button
+                android:id="@+id/btn_about_us"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:text="@string/about_us"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textColor="@color/drawer_icon_color"
+                android:drawableRight="@drawable/about_us"/>
+            <Button
+                android:id="@+id/btn_register_call_us"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:text="@string/call_us"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textColor="@color/drawer_icon_color"
+                android:drawableRight="@drawable/call_answer"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

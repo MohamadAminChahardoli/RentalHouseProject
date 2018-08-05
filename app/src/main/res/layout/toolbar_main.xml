@@ -11,21 +11,23 @@
     android:id="@+id/txt_filter"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_alignParentRight="true"
+    android:layout_alignParentLeft="true"
     android:background="?android:selectableItemBackground"
     android:clickable="true"
+    android:focusable="true"
     android:text=" فیلتر "
+    android:textSize="10sp"
     android:gravity="center"
     android:textColor="#fff"
-    android:paddingRight="10dp"
-    android:drawableRight="@drawable/filter"
-    android:onClick="showDialogForPerformFilters"/>
+    android:paddingLeft="10dp"
+    android:drawableRight="@drawable/filter_filled_tool_symbol"
+    android:onClick="openSlidingFilter"/>
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_toRightOf="@+id/btn_menu"
-    android:layout_toLeftOf="@+id/txt_filter"
+    android:layout_toLeftOf="@+id/btn_menu"
+    android:layout_toRightOf="@+id/txt_filter"
     android:text="خانه دانشجویی"
     android:gravity="center"
     android:textColor="#fff"
@@ -34,13 +36,15 @@
 
 <ImageButton
     android:id="@+id/btn_menu"
-    android:layout_width="?android:actionBarSize"
+    android:layout_width="50dp"
     android:layout_height="match_parent"
-    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
     android:background="?android:selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
-    app:srcCompat="@drawable/menu"/>
+    android:paddingRight="10dp"
+    app:srcCompat="@drawable/menu_three_horizontal_lines_symbol"
+    android:onClick="openDrawerMenu"/>
 
 
 

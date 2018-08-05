@@ -7,21 +7,23 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.AppCompatSeekBar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.TextView;
+import android.widget.Toolbar;
+
+import com.yarolegovich.slidingrootnav.SlideGravity;
+import com.yarolegovich.slidingrootnav.SlidingRootNav;
+import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
+import com.yarolegovich.slidingrootnav.callback.DragStateListener;
 
 import java.util.ArrayList;
-import java.util.jar.Manifest;
 
 import mohamadamin.soft.com.rentalhouseproject.Models.SecondaryHouse;
 import mohamadamin.soft.com.rentalhouseproject.PagerTransformers.SimpleCardsPagerTransformer;
 import mohamadamin.soft.com.rentalhouseproject.Adapters.HousesViewPagerAdapter;
 import mohamadamin.soft.com.rentalhouseproject.R;
-import mohamadamin.soft.com.rentalhouseproject.UtilityClasses.ComponentInitializer;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity
@@ -32,7 +34,8 @@ public class MainActivity extends AppCompatActivity
     private LinearLayout BottomSheetFilter;
     private BottomSheetBehavior BottomSheetBehavior;
     private BottomSheetDialog BottomSheetDialog;
-
+    private SlidingRootNav DrawerMenu;
+    private SlidingRootNav SlidingFilter;
 
     @Override
     protected void attachBaseContext(Context newBase)
@@ -48,8 +51,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         initializeComponents();
         setupViewPager();
-        initializeFilterBottomSheet();
-        initializeBottomSheetDialog();
+        setupSlidingNavigationDrawer();
+        setupSlidingFilter();
+        //initializeFilterBottomSheet();
+        //initializeBottomSheetDialog();
 
         SBChangeItems.setMax(MainViewPager.getAdapter().getCount());
         SBChangeItems.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -73,7 +78,87 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
+
+
+
+
     }
+
+
+
+    public void openDrawerMenu(View view)
+    {
+        if (SlidingFilter.isMenuOpened())
+        {
+            SlidingFilter.closeMenu();
+        }
+        DrawerMenu.openMenu(true);
+    }
+
+    public void openSlidingFilter(View view)
+    {
+        if (DrawerMenu.isMenuOpened())
+        {
+            DrawerMenu.closeMenu();
+        }
+        SlidingFilter.openMenu(true);
+    }
+
+    private void setupSlidingNavigationDrawer()
+    {
+        DrawerMenu = new SlidingRootNavBuilder(this)
+                .withGravity(SlideGravity.RIGHT)
+                .withMenuLayout(R.layout.menu_left_drawer_layout)
+                .withContentClickableWhenMenuOpened(false)
+                .addDragStateListener(new DragStateListener()
+                {
+                    @Override
+                    public void onDragStart()
+                    {
+                        if (SlidingFilter.isMenuOpened())
+                        {
+                            SlidingFilter.closeMenu();
+                        }
+                    }
+
+                    @Override
+                    public void onDragEnd(boolean isMenuOpened)
+                    {
+
+                    }
+                })
+                .inject();
+    }
+    private void setupSlidingFilter()
+    {
+        SlidingFilter = new SlidingRootNavBuilder(this)
+                .withGravity(SlideGravity.LEFT)
+                .withRootViewScale(0.009999999776482582f)
+                .withContentClickableWhenMenuOpened(false)
+                .withMenuLayout(R.layout.filter_bottom_sheet)
+                .addDragStateListener(new DragStateListener()
+                {
+                    @Override
+                    public void onDragStart()
+                    {
+                        if (DrawerMenu.isMenuOpened())
+                        {
+                            DrawerMenu.closeMenu();
+                        }
+                    }
+
+                    @Override
+                    public void onDragEnd(boolean isMenuOpened)
+                    {
+
+                    }
+                })
+                .inject();
+    }
+
+
+
 
     private void initializeBottomSheetDialog()
     {
@@ -163,5 +248,26 @@ public class MainActivity extends AppCompatActivity
     {
         BottomSheetDialog.dismiss();
     }
+
+
+
+    @Override
+    public void onBackPressed()
+    {
+        if(DrawerMenu.isMenuOpened())
+        {
+            DrawerMenu.closeMenu(true);
+        }
+        else if(SlidingFilter.isMenuOpened())
+        {
+            SlidingFilter.closeMenu(true);
+        }
+        else
+        {
+            super.onBackPressed();
+        }
+
+    }
+
 
 }

@@ -4,7 +4,12 @@
     <string name="show_beds_cost">مشاهده قیمت تخت ها</string>
     <string name="Show_on_map">مشاهده روی نقشه</string>
     <string name="back">بازگشت</string>
-    <string name="beds_cost">قیمت تخت ها</string>
+    <string name="beds_cost">قیمت تخت ها (تومان)</string>
+    <string name="log_out_user">خروج از حساب کاربری</string>
+    <string name="register_adds">ثبت آگهی من</string>
+    <string name="select_city">انتخاب شهر</string>
+    <string name="about_us">درباره ما</string>
+    <string name="call_us">تماس با ما</string>
 
     <string-array name="provinces">
         <item>استان</item>
