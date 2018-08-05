@@ -25,13 +25,20 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="60dp"/>
 
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/indicator_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_pager_main_slider"
+        app:ci_orientation="horizontal"/>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/sb_change_items"
-        android:layout_below="@+id/view_pager_main_slider"
-        android:layout_marginTop="20dp"/>
+        android:layout_below="@+id/indicator_main"
+        android:layout_marginTop="10dp"/>
 
     <android.support.v7.widget.AppCompatSeekBar
         android:id="@+id/sb_change_items"

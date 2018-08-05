@@ -20,6 +20,7 @@ import com.yarolegovich.slidingrootnav.callback.DragStateListener;
 
 import java.util.ArrayList;
 
+import me.relex.circleindicator.CircleIndicator;
 import mohamadamin.soft.com.rentalhouseproject.Adapters.MainSliderPagerAdapter;
 import mohamadamin.soft.com.rentalhouseproject.Models.SecondaryHouse;
 import mohamadamin.soft.com.rentalhouseproject.Models.SliderModel;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity
     private boolean IsSlidingOpened = false;
     private int currentPage = 0;
     private Handler SliderHandler;
+    private CircleIndicator IndicatorMain;
 
     @Override
     protected void attachBaseContext(Context newBase)
@@ -195,6 +197,7 @@ public class MainActivity extends AppCompatActivity
         MainSliderViewPager = findViewById(R.id.view_pager_main_slider);
         BottomSheetFilter = findViewById(R.id.linear_filter);
         SBChangeItems = findViewById(R.id.sb_change_items);
+        IndicatorMain = findViewById(R.id.indicator_main);
     }
 
     private void setupViewPager()
@@ -236,6 +239,8 @@ public class MainActivity extends AppCompatActivity
         FragmentPagerAdapter adapterViewPager=new MainSliderPagerAdapter
                 (getSupportFragmentManager(), SliderModel.createBanners());
         MainSliderViewPager.setAdapter(adapterViewPager);
+        IndicatorMain.setViewPager(MainSliderViewPager);
+
         MainSliderViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
         {
             @Override
