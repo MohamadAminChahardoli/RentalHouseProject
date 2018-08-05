@@ -298,7 +298,7 @@ public class MainActivity extends AppCompatActivity
 
     private int calculatePagePadding(int pageMargin)
     {
-        int viewPagerPadding = 80 + pageMargin;
+        int viewPagerPadding = 100 + pageMargin;
         return viewPagerPadding;
     }
 
