@@ -5,29 +5,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rel_toolbar"
     android:layout_width="match_parent"
-    android:layout_height="?android:actionBarSize">
+    android:layout_height="55dp"
+    android:background="@drawable/semi_circle_shape">
 
-<TextView
-    android:id="@+id/txt_filter"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+<ImageButton
+    android:id="@+id/btn_filter"
+    android:layout_width="45dp"
+    android:layout_height="45dp"
     android:layout_alignParentLeft="true"
-    android:background="?android:selectableItemBackground"
+    android:background="?android:selectableItemBackgroundBorderless"
     android:clickable="true"
     android:focusable="true"
-    android:text=" فیلتر "
     android:textSize="10sp"
     android:gravity="center"
     android:textColor="#fff"
     android:paddingLeft="10dp"
-    android:drawableRight="@drawable/filter_filled_tool_symbol"
+    app:srcCompat="@drawable/filter_filled_tool_symbol"
     android:onClick="openSlidingFilter"/>
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_toLeftOf="@+id/btn_menu"
-    android:layout_toRightOf="@+id/txt_filter"
+    android:layout_toRightOf="@+id/btn_filter"
     android:text="خانه دانشجویی"
     android:gravity="center"
     android:textColor="#fff"
@@ -36,10 +36,10 @@
 
 <ImageButton
     android:id="@+id/btn_menu"
-    android:layout_width="50dp"
-    android:layout_height="match_parent"
+    android:layout_width="45dp"
+    android:layout_height="45dp"
     android:layout_alignParentRight="true"
-    android:background="?android:selectableItemBackground"
+    android:background="?android:selectableItemBackgroundBorderless"
     android:clickable="true"
     android:focusable="true"
     android:paddingRight="10dp"

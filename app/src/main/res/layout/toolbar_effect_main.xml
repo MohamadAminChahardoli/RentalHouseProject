@@ -6,19 +6,19 @@ android:layout_height="match_parent">
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="50dp"
     android:background="@drawable/semi_circle_shape"/>
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="190dp"
+    android:layout_height="140dp"
     android:background="@drawable/semi_circle_shape_2"/>
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="190dp"
+    android:layout_height="140dp"
     android:background="@drawable/semi_circle_shape_3"/>
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="210dp"
+    android:layout_height="160dp"
     android:background="@drawable/semi_circle_shape_4"/>
 
 
