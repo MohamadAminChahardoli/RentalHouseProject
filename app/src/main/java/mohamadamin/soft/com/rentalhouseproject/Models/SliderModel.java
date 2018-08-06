@@ -21,7 +21,6 @@ public class SliderModel
     }
 
 
-
     public int getId()
     {
         return Id;
@@ -31,7 +30,6 @@ public class SliderModel
     {
         return BannerPhoto;
     }
-
 
 
     public void setId(int id)
@@ -44,6 +42,7 @@ public class SliderModel
         BannerPhoto = bannerPhoto;
     }
 
+
     public static ArrayList<SliderModel> createBanners()
     {
         ArrayList<SliderModel> banners =  new ArrayList<>();
@@ -53,4 +52,5 @@ public class SliderModel
 
         return banners;
     }
+
 }

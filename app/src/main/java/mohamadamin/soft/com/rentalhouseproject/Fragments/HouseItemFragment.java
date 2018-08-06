@@ -2,7 +2,6 @@ package mohamadamin.soft.com.rentalhouseproject.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
@@ -13,15 +12,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import mohamadamin.soft.com.rentalhouseproject.Activities.DetailActivity;
 import mohamadamin.soft.com.rentalhouseproject.Models.SecondaryHouse;
 import mohamadamin.soft.com.rentalhouseproject.R;
-import mohamadamin.soft.com.rentalhouseproject.UtilityClasses.ComponentInitializer;
 
 public class HouseItemFragment extends Fragment implements View.OnClickListener
 {
+
     private ImageView ImgHousePhoto;
     private TextView TxtHouseTitle;
     private TextView TxtHouseZoneAndRegisteredTime;
@@ -32,12 +30,6 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
     private Button BtnShowItem;
 
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
@@ -46,6 +38,30 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
         initializeComponent(itemView);
         bindViewsContents();
         return itemView;
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        showDetailOfCurrentItem();
+    }
+
+    private void showDetailOfCurrentItem()
+    {
+        Intent detailIntent=new Intent(getActivity(), DetailActivity.class);
+        detailIntent.putExtras(getArguments());
+        Pair<View, String> p1 = Pair.create((View)ImgHousePhoto, "mainHousePhoto");
+        Pair<View, String> p2 = Pair.create((View)TxtHouseTitle, "houseTitle");
+        Pair<View, String> p3 = Pair.create((View)TxtHouseZoneAndRegisteredTime, "houseZoneAndTime");
+        Pair<View, String> p4 = Pair.create((View)TxtHouseMortgage, "houseMortgage");
+        Pair<View, String> p5 = Pair.create((View)TxtHouseMortgageLabel, "houseMortgageLabel");
+        Pair<View, String> p6 = Pair.create((View)TxtHouseMonthlyRent, "houseMonthlyRent");
+        Pair<View, String> p7 = Pair.create((View)TxtHouseMonthlyRentLabel, "houseMonthlyRentLabel");
+
+        ActivityOptionsCompat options = ActivityOptionsCompat.
+                makeSceneTransitionAnimation(getActivity(), p1, p2, p3, p4, p5, p6, p7);
+
+        startActivity(detailIntent, options.toBundle());
     }
 
     private void initializeComponent(View view)
@@ -89,28 +105,4 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
     }
 
 
-
-    @Override
-    public void onClick(View view)
-    {
-        showDetailOfCurrentItem();
-    }
-
-    private void showDetailOfCurrentItem()
-    {
-        Intent detailIntent=new Intent(getActivity(), DetailActivity.class);
-        detailIntent.putExtras(getArguments());
-        Pair<View, String> p1 = Pair.create((View)ImgHousePhoto, "mainHousePhoto");
-        Pair<View, String> p2 = Pair.create((View)TxtHouseTitle, "houseTitle");
-        Pair<View, String> p3 = Pair.create((View)TxtHouseZoneAndRegisteredTime, "houseZoneAndTime");
-        Pair<View, String> p4 = Pair.create((View)TxtHouseMortgage, "houseMortgage");
-        Pair<View, String> p5 = Pair.create((View)TxtHouseMortgageLabel, "houseMortgageLabel");
-        Pair<View, String> p6 = Pair.create((View)TxtHouseMonthlyRent, "houseMonthlyRent");
-        Pair<View, String> p7 = Pair.create((View)TxtHouseMonthlyRentLabel, "houseMonthlyRentLabel");
-
-        ActivityOptionsCompat options = ActivityOptionsCompat.
-                makeSceneTransitionAnimation(getActivity(), p1, p2, p3, p4, p5, p6, p7);
-
-        startActivity(detailIntent, options.toBundle());
-    }
 }

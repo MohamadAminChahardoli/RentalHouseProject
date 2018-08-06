@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class BedCost
 {
+
     private int Id;
     private String BedType;
     private String Cost;
+
 
     public BedCost()
     {
@@ -35,7 +37,6 @@ public class BedCost
         return Cost;
     }
 
-
     public void setId(int id)
     {
         Id = id;
@@ -50,6 +51,7 @@ public class BedCost
     {
         Cost = cost;
     }
+
 
     public static ArrayList<BedCost> createList()
     {

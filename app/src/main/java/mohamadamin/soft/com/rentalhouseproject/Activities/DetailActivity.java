@@ -40,28 +40,29 @@ public class DetailActivity extends AppCompatActivity
     }
 
     @Override
+    public void onBackPressed()
+    {
+        if (SheetBehavior.getState()==BottomSheetBehavior.STATE_EXPANDED)
+        {
+            hideCostsBottomSheet();
+        }
+        else
+        {
+            super.onBackPressed();
+        }
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         initializeComponent();
-
-        Bundle bundle=getIntent().getExtras();
-
-        ImgMainHousePhoto.setImageResource(bundle.getInt("house_photo"));
-        TxtHouseTitle.setText(bundle.getString("house_title"));
-        TxtHouseZoneAndTime.setText(bundle.getString("house_zone_and_time"));
-        TxtHouseMortgage.setText(bundle.getString("house_mortgage"));
-        TxtHouseMonthlyRent.setText(bundle.getString("house_monthly_rent"));
-
+        bindViewsContentFromBundle();
         setupCostsListView();
         initializeBottomSheetBehavior();
 
-    }
-
-    private void initializeBottomSheetBehavior()
-    {
-        SheetBehavior = BottomSheetBehavior.from(CostsBottomSheet);
     }
 
     private void initializeComponent()
@@ -75,17 +76,26 @@ public class DetailActivity extends AppCompatActivity
         ListViewCosts = findViewById(R.id.list_view_costs);
     }
 
+    private void bindViewsContentFromBundle()
+    {
+        Bundle bundle=getIntent().getExtras();
+        ImgMainHousePhoto.setImageResource(bundle.getInt("house_photo"));
+        TxtHouseTitle.setText(bundle.getString("house_title"));
+        TxtHouseZoneAndTime.setText(bundle.getString("house_zone_and_time"));
+        TxtHouseMortgage.setText(bundle.getString("house_mortgage"));
+        TxtHouseMonthlyRent.setText(bundle.getString("house_monthly_rent"));
+    }
+
     private void setupCostsListView()
     {
         CostAdapter adapter = new CostAdapter(this, BedCost.createList());
         ListViewCosts.setAdapter(adapter);
     }
 
-    public void finishActivity(View view)
+    private void initializeBottomSheetBehavior()
     {
-        supportFinishAfterTransition();
+        SheetBehavior = BottomSheetBehavior.from(CostsBottomSheet);
     }
-
 
     public void showCostsBottomSheet(View view)
     {
@@ -104,17 +114,9 @@ public class DetailActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    @Override
-    public void onBackPressed()
+    public void finishActivity(View view)
     {
-        if (SheetBehavior.getState()==BottomSheetBehavior.STATE_EXPANDED)
-        {
-            hideCostsBottomSheet();
-        }
-        else
-        {
-            super.onBackPressed();
-        }
-
+        supportFinishAfterTransition();
     }
+
 }

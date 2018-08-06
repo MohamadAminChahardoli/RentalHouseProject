@@ -6,26 +6,7 @@ import mohamadamin.soft.com.rentalhouseproject.R;
 
 public class SecondaryHouse
 {
-    public static ArrayList<SecondaryHouse> createHouses(int numberOfHouses)
-    {
-        ArrayList<SecondaryHouse> houses = new ArrayList<>();
-        for(int i=0; i<numberOfHouses; i++)
-        {
-            houses.add(new SecondaryHouse(
-                    "خانه زیبا شماره "+i,
-                    "دیروز",
-                    "ظفر",
-                    R.drawable.pic3,
-                    "مجانی",
-                    "360,000",
-                    1,
-                    123
 
-            ));
-        }
-
-        return houses;
-    }
 
     private String Title;
     private String DateOfRegister;
@@ -52,6 +33,7 @@ public class SecondaryHouse
         this.Type = type;
         this.VisitedCount = visitedCount;
     }
+
 
     public String getTitle()
     {
@@ -94,8 +76,6 @@ public class SecondaryHouse
     }
 
 
-
-
     public void setTitle(String title)
     {
         this.Title = title;
@@ -135,5 +115,28 @@ public class SecondaryHouse
     {
         this.VisitedCount = visitedCount;
     }
+
+
+    public static ArrayList<SecondaryHouse> createHouses(int numberOfHouses)
+    {
+        ArrayList<SecondaryHouse> houses = new ArrayList<>();
+        for(int i=0; i<numberOfHouses; i++)
+        {
+            houses.add(new SecondaryHouse(
+                    "خانه زیبا شماره "+i,
+                    "دیروز",
+                    "ظفر",
+                    R.drawable.pic3,
+                    "مجانی",
+                    "360,000",
+                    1,
+                    123
+
+            ));
+        }
+
+        return houses;
+    }
+
 }
 

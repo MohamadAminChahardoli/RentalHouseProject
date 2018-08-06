@@ -10,16 +10,18 @@ public class MyApplication extends Application
 {
     private static Context context;
 
-    public static Context getContext()
-    {
-        return context;
-    }
+
     @Override
     public void onCreate()
     {
         super.onCreate();
         context=getApplicationContext();
         initializeCalligraphy();
+    }
+
+    public static Context getContext()
+    {
+        return context;
     }
 
     private void initializeCalligraphy()
@@ -29,4 +31,5 @@ public class MyApplication extends Application
                 .setFontAttrId(R.attr.fontPath)
                 .build());
     }
+
 }

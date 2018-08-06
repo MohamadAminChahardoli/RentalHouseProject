@@ -15,12 +15,6 @@ import mohamadamin.soft.com.rentalhouseproject.R;
 public class CostAdapter extends BaseAdapter
 {
 
-    class CostViewHolder
-    {
-        private TextView TxtBedType;
-        private TextView TxtBedCost;
-    }
-
     private Context ContextInstance;
     private ArrayList<BedCost> CostsList;
     private CostViewHolder CostHolder;
@@ -74,4 +68,11 @@ public class CostAdapter extends BaseAdapter
         CostHolder.TxtBedType.setText(CostsList.get(position).getBedType());
         CostHolder.TxtBedCost.setText(CostsList.get(position).getCost());
     }
+
+    class CostViewHolder
+    {
+        private TextView TxtBedType;
+        private TextView TxtBedCost;
+    }
+
 }

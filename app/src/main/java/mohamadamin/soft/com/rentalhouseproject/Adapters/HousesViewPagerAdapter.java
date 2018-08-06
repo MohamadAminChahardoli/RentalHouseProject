@@ -33,5 +33,4 @@ public class HousesViewPagerAdapter extends FragmentPagerAdapter
         return Houses.size();
     }
 
-
 }

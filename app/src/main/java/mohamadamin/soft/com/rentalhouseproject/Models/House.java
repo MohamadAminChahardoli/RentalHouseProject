@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class House
 {
+
     private String Title;
     private String DateOfRegister;
     private String Address;
@@ -48,8 +49,6 @@ public class House
         this.longitude = longitude;
         BedsInstance = bedsInstance;
     }
-
-
 
 
     public String getTitle()
@@ -212,4 +211,5 @@ public class House
     {
         BedsInstance = bedsInstance;
     }
+
 }
