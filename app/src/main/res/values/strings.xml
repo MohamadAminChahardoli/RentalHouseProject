@@ -10,6 +10,9 @@
     <string name="select_city">انتخاب شهر</string>
     <string name="about_us">درباره ما</string>
     <string name="call_us">تماس با ما</string>
+    <string name="both_type">خانه و خوابگاه</string>
+    <string name="home_type">خانه</string>
+    <string name="dorm_type">خوابگاه</string>
 
     <string-array name="provinces">
         <item>استان</item>
@@ -35,5 +38,11 @@
         <item>گرگان</item>
         <item>بابل</item>
         <item>ملایر</item>
+    </string-array>
+
+    <string-array name="types">
+        <item>خوابگاه</item>
+        <item>خانه</item>
+        <item>هردو</item>
     </string-array>
 </resources>

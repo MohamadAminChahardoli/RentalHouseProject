@@ -9,10 +9,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatSeekBar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
 import com.yarolegovich.slidingrootnav.SlideGravity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity
     private Handler SliderHandler;
     private CircleIndicator IndicatorMain;
     private final int SlidingDelay = 3000;
+    private DialogPlus filterDialog;
 
 
     @Override
@@ -61,9 +66,9 @@ public class MainActivity extends AppCompatActivity
         {
             DrawerMenu.closeMenu(true);
         }
-        else if (SlidingFilter.isMenuOpened())
+        else if (filterDialog.isShowing())
         {
-            SlidingFilter.closeMenu(true);
+            filterDialog.dismiss();
         }
         else
         {
@@ -81,7 +86,6 @@ public class MainActivity extends AppCompatActivity
         setupSlider();
         setupViewPager();
         setupSlidingNavigationDrawer();
-        setupSlidingFilter();
         setupChangeItemsSeekBar();
     }
 
@@ -176,42 +180,10 @@ public class MainActivity extends AppCompatActivity
                     {
                         super.onDragStart();
 
-                        if (SlidingFilter.isMenuOpened())
+                       /* if (SlidingFilter.isMenuOpened())
                         {
                             SlidingFilter.closeMenu();
-                        }
-                    }
-                })
-                .inject();
-    }
-
-    private void setupSlidingFilter()
-    {
-        SlidingFilter = new SlidingRootNavBuilder(this)
-                .withGravity(SlideGravity.LEFT)
-                .withRootViewScale(0.009999999776482582f)
-                .withContentClickableWhenMenuOpened(false)
-                .withMenuLayout(R.layout.filter_bottom_sheet)
-                .addDragStateListener(new DragStateListener()
-                {
-                    @Override
-                    public void onDragStart()
-                    {
-                        if (DrawerMenu.isMenuOpened())
-                        {
-                            DrawerMenu.closeMenu();
-                            IsSlidingOpened = true;
-                        }
-                    }
-
-                    @Override
-                    public void onDragEnd(boolean isMenuOpened)
-                    {
-                        if (IsSlidingOpened)
-                        {
-                            SlidingFilter.closeMenu();
-                            IsSlidingOpened = false;
-                        }
+                        }*/
                     }
                 })
                 .inject();
@@ -232,10 +204,6 @@ public class MainActivity extends AppCompatActivity
 
     public void openDrawerMenu(View view)
     {
-        if (SlidingFilter.isMenuOpened())
-        {
-            SlidingFilter.closeMenu();
-        }
         DrawerMenu.openMenu(true);
     }
 
@@ -263,6 +231,15 @@ public class MainActivity extends AppCompatActivity
                 slide();
             }
         }, SlidingDelay);
+    }
+
+    public void showFilterDialog(View view)
+    {
+        filterDialog = DialogPlus.newDialog(this)
+                .setContentHolder(new ViewHolder(R.layout.filter_bottom_sheet))
+                .setGravity(Gravity.TOP)
+                .create();
+        filterDialog.show();
     }
 
 }

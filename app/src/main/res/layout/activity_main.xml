@@ -21,7 +21,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager_main_slider"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="57dp"/>
 
@@ -52,7 +52,7 @@
 
 </RelativeLayout>
 
-    <include layout="@layout/filter_bottom_sheet"/>
+    <!--<include layout="@layout/filter_bottom_sheet"/>-->
 
 
 </android.support.design.widget.CoordinatorLayout>

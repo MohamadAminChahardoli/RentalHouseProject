@@ -21,7 +21,7 @@
     android:textColor="#fff"
     android:paddingLeft="10dp"
     app:srcCompat="@drawable/filter_filled_tool_symbol"
-    android:onClick="openSlidingFilter"/>
+    android:onClick="showFilterDialog"/>
 
 <TextView
     android:layout_width="match_parent"

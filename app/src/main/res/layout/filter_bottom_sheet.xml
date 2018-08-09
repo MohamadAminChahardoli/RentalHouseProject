@@ -1,253 +1,356 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/linear_filter"
+    xmlns:mstb="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E3F2FD"
-    android:orientation="vertical"
-    app:behavior_peekHeight="0dp"
-    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    app:layout_behavior="@string/bottom_sheet_behavior">
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/filter_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="0dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="فیلتر ها"
+                android:textSize="16sp"
+                android:paddingRight="10dp"
+                android:textColor="@color/gray800"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:textColor="#ff0000"
+                android:text="حذف همه فیلتر ها"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/sv_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filter_toolbar">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <!--zone filter section-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/gray_50">
 
-            <TextView
-                android:id="@+id/btn_cancel_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
-                android:background="?android:selectableItemBackground"
-                android:text="بازگشت  "
-                android:textColor="#fff"
-                android:layout_alignParentLeft="true"
-                android:gravity="center"
-                android:drawableLeft="@drawable/back"
-                android:padding="5dp"
-                android:onClick="dismissFilterDialog"/>
+        <TextView
+            android:id="@+id/txt_select_zone_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="انتخاب محل :"
+            android:textSize="14sp"/>
 
-            <TextView
-                android:id="@+id/btn_submit_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="?android:selectableItemBackground"
-                android:text="  تایید"
-                android:textColor="#fff"
-                android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:drawableRight="@drawable/checked"
-                android:padding="5dp"
-                android:onClick="dismissFilterDialog"/>
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/sp_select_zone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/cities"
+            android:layout_toLeftOf="@+id/txt_select_zone_label"
+            android:layout_marginRight="20dp"/>
+
+        <ImageButton
+            android:id="@+id/btn_cancel_zone_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/close_box"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="2dp"/>
+
 
     </RelativeLayout>
 
-    <ScrollView
+    <!--mortgage filter section-->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/gray_50"
+        android:layout_marginTop="5dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/txt_choose_mortgage_range_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="تعیین ودیعه :"
+            android:textSize="14sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_cancel_mortgage_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/close_box"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="2dp"/>
+
+        <TextView
+            android:id="@+id/txt_from_mortgage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="از"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txt_choose_mortgage_range_label"
+            android:layout_margin="10dp"/>
+
+        <EditText
+            android:id="@+id/edt_from_mortgage"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_choose_mortgage_range_label"
+            android:layout_toLeftOf="@+id/txt_from_mortgage"
+            android:background="@drawable/edt_rounded_border"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txt_to_mortgage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تا"
+            android:layout_below="@+id/txt_choose_mortgage_range_label"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/edt_from_mortgage"/>
+
+        <EditText
+            android:id="@+id/edt_to_mortgage"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_choose_mortgage_range_label"
+            android:layout_toLeftOf="@+id/txt_to_mortgage"
+            android:background="@drawable/edt_rounded_border"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="12sp"/>
+
+
+    </RelativeLayout>
+
+    <!--rent filter section-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/gray_50"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/txt_choose_rent_range_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="تعیین اجاره ماهیانه :"
+            android:textSize="14sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_cancel_rent_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/close_box"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="2dp"/>
+
+        <TextView
+            android:id="@+id/txt_from_rent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="از"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txt_choose_rent_range_label"
+            android:layout_margin="10dp"/>
+
+        <EditText
+            android:id="@+id/edt_from_rent"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_choose_rent_range_label"
+            android:layout_toLeftOf="@+id/txt_from_rent"
+            android:background="@drawable/edt_rounded_border"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txt_to_rent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تا"
+            android:layout_below="@+id/txt_choose_rent_range_label"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/edt_from_rent"/>
+
+        <EditText
+            android:id="@+id/edt_to_rent"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_choose_rent_range_label"
+            android:layout_toLeftOf="@+id/txt_to_rent"
+            android:background="@drawable/edt_rounded_border"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="12sp"/>
+
+
+    </RelativeLayout>
+
+    <!--select type filter section-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/gray_50"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/txt_choose_type_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="انتخاب نوع :"
+            android:textSize="14sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_cancel_type_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/close_box"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="2dp"/>
+
+        <RadioGroup
+            android:id="@+id/rg_house_types"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@+id/txt_choose_type_label">
+
+            <RadioButton
+                android:id="@+id/rb_both_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/both_type"
+                android:layoutDirection="rtl"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/rb_home_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_type"
+                android:layoutDirection="rtl"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"/>
+            <RadioButton
+                android:id="@+id/rb_dorm_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dorm_type"
+                android:layoutDirection="rtl"/>
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_filter_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <RelativeLayout
-                android:id="@+id/rel_select_province"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/rounded_white_rectangle">
+                android:layout_centerInParent="true">
 
-                <Spinner
-                    android:id="@+id/sp_province"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="20dp"
-                    android:entries="@array/provinces"
-                    android:padding="0dp"/>
-
-                <Spinner
-                    android:id="@+id/sp_city"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageButton
+                    android:id="@+id/btn_cancel_filter"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_btn_style"
+                    app:srcCompat="@drawable/window_close"
+                    android:onClick="showCostsBottomSheet"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="20dp"
-                    android:entries="@array/provinces"
-                    android:padding="0dp"/>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rel_select_cost"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/rounded_white_rectangle">
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
 
                 <TextView
-                    android:id="@+id/txt_mortgage"
+                    android:id="@+id/txt_cancel_filter_caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:gravity="right|center"
-                    android:padding="10dp"
-                    android:text="ودیعه"
-                    android:textColor="@color/gray800"
-                    android:textSize="14sp"/>
-
-                <RelativeLayout
-                    android:id="@+id/rel_mortgage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_mortgage">
-
-
-                    <Spinner
-                        android:id="@+id/sp_from_cost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="20dp"
-                        android:entries="@array/provinces"
-                        android:padding="0dp"/>
-
-                    <Spinner
-                        android:id="@+id/sp_to_cost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="20dp"
-                        android:entries="@array/provinces"
-                        android:padding="0dp"/>
-
-
-                </RelativeLayout>
-
-
-                <TextView
-                    android:id="@+id/txt_rent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/rel_mortgage"
-                    android:gravity="right|center"
-                    android:padding="10dp"
-                    android:text="اجاره"
-                    android:textColor="@color/gray800"
-                    android:textSize="14sp"/>
-
-                <RelativeLayout
-                    android:id="@+id/rel_rent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_rent">
-
-
-                    <Spinner
-                        android:id="@+id/sp_from_cost_rent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="20dp"
-                        android:entries="@array/provinces"
-                        android:padding="0dp"/>
-
-                    <Spinner
-                        android:id="@+id/sp_to_cost_rent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="20dp"
-                        android:entries="@array/provinces"
-                        android:padding="0dp"/>
-
-
-                </RelativeLayout>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rel_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/rounded_white_rectangle"
-                android:padding="10dp">
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:text="لغو"
+                    android:textColor="#fff"
+                    android:textSize="12dp"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_below="@+id/btn_cancel_filter"
+                    android:layout_alignLeft="@+id/btn_cancel_filter"
+                    android:layout_alignRight="@+id/btn_cancel_filter"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="هردو"/>
-
-                    <RadioButton
-                        android:id="@+id/rb_both"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:checked="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="خوابگاه"/>
-
-                    <RadioButton
-                        android:id="@+id/rb_dorm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="خانه"/>
-
-                    <RadioButton
-                        android:id="@+id/rb_home"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"/>
-
-
-                </RadioGroup>
+                <ImageButton
+                    android:id="@+id/btn_submit_filter"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_btn_style"
+                    app:srcCompat="@drawable/checked"
+                    android:onClick="showOnGoogleMap"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:id="@+id/txt_submit_filter_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تایید"
+                    android:textColor="#fff"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/btn_submit_filter"
+                    android:layout_alignLeft="@+id/btn_submit_filter"
+                    android:layout_alignRight="@+id/btn_submit_filter"/>
 
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:visibility="invisible"/>
 
-        </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     </ScrollView>
 
 
-</LinearLayout>
+
+</RelativeLayout>
