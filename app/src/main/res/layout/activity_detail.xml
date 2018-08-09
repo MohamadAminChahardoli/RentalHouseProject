@@ -116,13 +116,29 @@
 
 
 
-                <ImageView
+                <!--<ImageView
                     android:id="@+id/img_house_main_photo_detail"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/pic3"
+                    android:transitionName="mainHousePhoto"/>-->
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/view_pager_house_photos"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
                     android:transitionName="mainHousePhoto"/>
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/view_pager_house_photos"
+                    app:ci_orientation="horizontal"
+                    app:ci_drawable_unselected="@drawable/indictor_unselected_style"
+                    app:ci_drawable="@drawable/indicator_selected_style"/>
 
                 <ImageButton
                     android:id="@+id/btn_finish_detail_activity"
@@ -148,7 +164,7 @@
                     android:id="@+id/txt_house_title_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/img_house_main_photo_detail"
+                    android:layout_below="@+id/indicator_detail"
                     android:gravity="right"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
@@ -330,7 +346,7 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
-                    android:text="آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس آدرس "
+                    android:text="تهران، لویزان، اتوبان شهید صیاد شیرازی، زیر پل شهید بابایی، خوابگاه دانشکده شهید شمسی پور"
                     android:textColor="@color/gray800"
                     android:textSize="12sp"/>
 
@@ -376,7 +392,7 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
-                    android:text="امکانات امکانات امکانات امکانات امکانات امکانات امکانات امکانات امکانات امکانات امکانات امکانات "
+                    android:text="حیاط، پارک و وسیله ورزشی، نماز خانه سالن مطالعه، حمام، کولر، شوفاژ، تلوزیون، کتابخانه و..."
                     android:textColor="@color/gray800"
                     android:textSize="12sp"/>
 
@@ -422,7 +438,7 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
-                    android:text="توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات "
+                    android:text="این خوابگاه مربوط به دانشکده شهید شمسی پور است و کسی که دانشجوی شمسی پور نیست، به هیچ وجه تماس نگیرد. اینجا اتاق های چهار و شش تخته موجود است."
                     android:textColor="@color/gray800"
                     android:textSize="12sp"/>
 

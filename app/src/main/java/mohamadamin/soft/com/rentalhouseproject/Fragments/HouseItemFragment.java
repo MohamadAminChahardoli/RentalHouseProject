@@ -27,7 +27,7 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
     private TextView TxtHouseMortgageLabel;
     private TextView TxtHouseMonthlyRent;
     private TextView TxtHouseMonthlyRentLabel;
-    private Button BtnShowItem;
+    //private Button BtnShowItem;
 
 
     @Nullable
@@ -37,6 +37,7 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
         View itemView = inflater.inflate(R.layout.pager_item_layout,container,false);
         initializeComponent(itemView);
         bindViewsContents();
+        itemView.setOnClickListener(this);
         return itemView;
     }
 
@@ -73,7 +74,7 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
         TxtHouseMortgageLabel = view.findViewById(R.id.txt_house_mortgage_label);
         TxtHouseMonthlyRent = view.findViewById(R.id.txt_house_monthly_rent);
         TxtHouseMonthlyRentLabel = view.findViewById(R.id.txt_house_monthly_rent_label);
-        BtnShowItem = view.findViewById(R.id.btn_show_item);
+        //BtnShowItem = view.findViewById(R.id.btn_show_item);
     }
 
     private void bindViewsContents()
@@ -83,7 +84,7 @@ public class HouseItemFragment extends Fragment implements View.OnClickListener
         TxtHouseZoneAndRegisteredTime.setText(getArguments().getString("house_zone_and_time"));
         TxtHouseMortgage.setText(getArguments().getString("house_mortgage"));
         TxtHouseMonthlyRent.setText(getArguments().getString("house_monthly_rent"));
-        BtnShowItem.setOnClickListener(this);
+        //BtnShowItem.setOnClickListener(this);
     }
 
     public static Fragment getInstance(SecondaryHouse houseModel)

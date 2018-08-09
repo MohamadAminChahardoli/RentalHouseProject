@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity
         {
             filterDialog.dismiss();
         }
+
         else
         {
             super.onBackPressed();
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity
         setupViewPager();
         setupSlidingNavigationDrawer();
         setupChangeItemsSeekBar();
+        setupFilterDialog();
     }
 
     private void initializeComponents()
@@ -152,13 +154,13 @@ public class MainActivity extends AppCompatActivity
     {
         float density = getResources().getDisplayMetrics().density;
         //int partialWidth = (int) (16 * density); // 16dp
-        int pageMargin = (int) (20 * density); // 15dp
+        int pageMargin = (int) (30 * density); // 15dp
         return pageMargin;
     }
 
     private int calculatePagePadding(int pageMargin)
     {
-        int viewPagerPadding = 100 + pageMargin;
+        int viewPagerPadding = 110 + pageMargin;
         return viewPagerPadding;
     }
 
@@ -235,11 +237,15 @@ public class MainActivity extends AppCompatActivity
 
     public void showFilterDialog(View view)
     {
+        filterDialog.show();
+    }
+
+    private void setupFilterDialog()
+    {
         filterDialog = DialogPlus.newDialog(this)
                 .setContentHolder(new ViewHolder(R.layout.filter_bottom_sheet))
                 .setGravity(Gravity.TOP)
                 .create();
-        filterDialog.show();
     }
 
 }

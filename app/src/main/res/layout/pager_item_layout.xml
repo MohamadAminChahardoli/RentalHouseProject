@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/img_house_main_photo"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             android:src="@drawable/pic3"
             android:scaleType="centerCrop"
             android:transitionName="mainHousePhoto"/>
@@ -28,7 +28,7 @@
             android:text="عنوان خانه"
             android:paddingTop="2dp"
             android:paddingRight="20dp"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:gravity="right"
             android:textColor="@color/gray800"
             android:transitionName="houseTitle"/>
@@ -42,7 +42,7 @@
             android:paddingRight="20dp"
             android:paddingBottom="2dp"
             android:paddingTop="2dp"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:gravity="right"
             android:textColor="@color/gray500"
             android:transitionName="houseZoneAndTime"/>
@@ -107,23 +107,24 @@
             android:layout_below="@+id/txt_house_mortgage"
             android:layout_toLeftOf="@+id/txt_house_monthly_rent_label"
             android:textColor="@color/gray500"
-            android:transitionName="houseMonthlyRent"/>
+            android:transitionName="houseMonthlyRent"
+            android:layout_marginBottom="15dp"/>
 
 
 
-        <Button
+        <!--<Button
             android:id="@+id/btn_show_item"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="مشاهده جزییات"
             android:layout_centerHorizontal="true"
             android:textColor="#fff"
+            android:textSize="12sp"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:background="@drawable/rounded_blue_style"
-            android:layout_below="@+id/txt_house_monthly_rent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"/>-->
 
     </RelativeLayout>
 
