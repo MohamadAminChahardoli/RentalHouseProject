@@ -24,6 +24,7 @@ import com.yarolegovich.slidingrootnav.callback.DragStateListener;
 
 import java.util.ArrayList;
 
+import co.ronash.pushe.Pushe;
 import me.relex.circleindicator.CircleIndicator;
 import mohamadamin.soft.com.rentalhouseproject.Adapters.MainSliderPagerAdapter;
 import mohamadamin.soft.com.rentalhouseproject.Implementations.DrawerMenuDragStateListenerImpl;
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity
         setupSlidingNavigationDrawer();
         setupChangeItemsSeekBar();
         setupFilterDialog();
+        Pushe.initialize(this,true);
     }
 
     private void initializeComponents()
