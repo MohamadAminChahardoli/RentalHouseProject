@@ -1,6 +1,7 @@
 package mohamadamin.soft.com.rentalhouseproject.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
@@ -240,6 +241,14 @@ public class MainActivity extends AppCompatActivity
     public void showFilterDialog(View view)
     {
         filterDialog.show();
+    }
+
+    public void openSearchActivity(View view)
+    {
+
+        Intent searchIntent = new Intent
+                (MainActivity.this, SearchActivity.class);
+        startActivity(searchIntent);
     }
 
     private void setupFilterDialog()
