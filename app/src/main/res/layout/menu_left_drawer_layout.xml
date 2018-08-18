@@ -60,6 +60,18 @@
             android:gravity="center">
 
             <Button
+                android:id="@+id/btn_register_login"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:text="@string/owner_register_login"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textColor="@color/drawer_icon_color"
+                android:drawableRight="@drawable/speaker"
+                android:onClick="goToOwnerRegistration"/>
+
+            <Button
                 android:id="@+id/btn_register_adds"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -68,7 +80,8 @@
                 android:gravity="center"
                 android:layout_margin="5dp"
                 android:textColor="@color/drawer_icon_color"
-                android:drawableRight="@drawable/speaker"/>
+                android:drawableRight="@drawable/speaker"
+                android:onClick="goToOwnerManagement"/>
             <Button
                 android:id="@+id/btn_select_city"
                 android:layout_width="150dp"

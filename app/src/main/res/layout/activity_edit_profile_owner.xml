@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.OwnerSignUpFragment">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/ic_profile_user"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_horizontal"
+                    android:text="ویرایش مشخصات مالک"
+                    android:textSize="18sp"/>
+
+                <EditText
+                    android:id="@+id/edt_profile_owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/register_edit_text_drawable"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/edt_profile_owner_family"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/register_edit_text_drawable"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/edt_profile_owner_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/register_edit_text_drawable"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:padding="5dp"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/sp_profile_states"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="0.7"
+                        android:popupBackground="@drawable/custom_spinner_popup"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="0.3"
+                        android:gravity="center|left"
+                        android:labelFor="@id/sp_states"
+                        android:padding="5dp"
+                        android:fontFamily="@font/iransans"
+                        android:text="استان"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/sp_profile_cities"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="0.7"
+                        android:popupBackground="@drawable/custom_spinner_popup"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="0.3"
+                        android:gravity="center|left"
+                        android:labelFor="@id/sp_states"
+                        android:padding="5dp"
+                        android:fontFamily="@font/iransans"
+                        android:text="شهر"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_edit_owner_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/register_button_sign_up_drawable"
+                    android:fontFamily="@font/iransans"
+                    android:text="ویرایش پروفایل"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

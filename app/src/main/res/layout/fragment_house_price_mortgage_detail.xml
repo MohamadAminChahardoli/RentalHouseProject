@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_house_mortgage_price_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/iransans"
+            android:gravity="right|center_horizontal|center_vertical"
+            android:text="اطلاعات قیمت ها"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/divider_manage_section_drawable"
+            android:orientation="vertical"/>
+
+        <com.aldoapps.autoformatedittext.AutoFormatEditText
+            android:id="@+id/edt_mortgage"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/simple_edit_text_border"
+            android:fontFamily="@font/iransans"
+            android:gravity="center"
+            android:hint="ودیعه به تومان مثلا 100,0000"
+            android:textColorHint="#808080"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="6dp"
+            android:scrollbars="vertical"
+            android:textSize="14sp"
+            app:isDecimal="true"/>
+
+        <com.aldoapps.autoformatedittext.AutoFormatEditText
+            android:id="@+id/edt_rent"
+            android:textColorHint="#808080"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/simple_edit_text_border"
+            android:fontFamily="@font/iransans"
+            android:gravity="center"
+            android:hint="اجاره به تومان مثلا 500,000"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="6dp"
+            android:scrollbars="vertical"
+            android:textSize="14sp"
+            app:isDecimal="true"/>
+
+        <LinearLayout
+            android:id="@+id/lin_bed_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_house_mortgage_bed_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/iransans"
+                android:gravity="right|center_horizontal|center_vertical"
+                android:text="اطلاعات تخت ها"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/divider_manage_section_drawable"
+                android:orientation="vertical"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/edt_single_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border_with_glow_effect_enable_disable"
+                    android:enabled="false"
+                    android:fontFamily="@font/iransans"
+                    android:hint="قیمت تخت  به تومان"
+                    android:textColorHint="#808080"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textSize="13sp"/>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/chk_single_bed"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_toRightOf="@id/edt_single_bed"
+                    android:checked="false"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:padding="6dp"
+                    android:text=" یک تخت "/>
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/edt_two_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/edt_single_bed"
+                    android:layout_margin="8dp"
+                    android:textColorHint="#808080"
+                    android:background="@drawable/border_with_glow_effect_enable_disable"
+                    android:enabled="false"
+                    android:fontFamily="@font/iransans"
+                    android:hint="قیمت تخت  به تومان"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textSize="13sp"/>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/chk_two_bed"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/chk_single_bed"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_toRightOf="@id/edt_single_bed"
+                    android:checked="false"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:padding="6dp"
+                    android:text="دو تخت"/>
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/edt_three_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/edt_two_bed"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border_with_glow_effect_enable_disable"
+                    android:enabled="false"
+                    android:fontFamily="@font/iransans"
+                    android:textColorHint="#808080"
+                    android:hint="قیمت تخت  به تومان"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textSize="13sp"/>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/chk_three_bed"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/chk_two_bed"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_toRightOf="@id/edt_single_bed"
+                    android:checked="false"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:padding="6dp"
+                    android:text="سه تخت"/>
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/edt_four_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/edt_three_bed"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border_with_glow_effect_enable_disable"
+                    android:enabled="false"
+                    android:fontFamily="@font/iransans"
+                    android:hint="قیمت تخت  به تومان"
+                    android:inputType="number"
+                    android:textColorHint="#808080"
+                    android:padding="6dp"
+                    android:textSize="13sp"/>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/chk_four_bed"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/chk_three_bed"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_toRightOf="@id/edt_three_bed"
+                    android:checked="false"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:padding="6dp"
+                    android:text="چهار تخت"/>
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/edt_six_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/edt_four_bed"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border_with_glow_effect_enable_disable"
+                    android:enabled="false"
+                    android:fontFamily="@font/iransans"
+                    android:hint="قیمت تخت  به تومان"
+                    android:inputType="number"
+                    android:textColorHint="#808080"
+                    android:padding="6dp"
+                    android:textSize="13sp"/>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/chk_six_bed"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/chk_four_bed"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_toRightOf="@id/edt_four_bed"
+                    android:checked="false"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:padding="6dp"
+                    android:text="شش تخت"/>
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/edt_eight_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textColorHint="#808080"
+                    android:layout_below="@id/edt_six_bed"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border_with_glow_effect_enable_disable"
+                    android:enabled="false"
+                    android:fontFamily="@font/iransans"
+                    android:hint="قیمت تخت  به تومان"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textSize="13sp"/>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/chk_eight_bed"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/chk_six_bed"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_toRightOf="@id/edt_six_bed"
+                    android:checked="false"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:padding="6dp"
+                    android:text="هشت تخت"/>
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/edt_ten_bed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textColorHint="#808080"
+                    android:layout_below="@id/chk_eight_bed"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border_with_glow_effect_enable_disable"
+                    android:enabled="false"
+                    android:fontFamily="@font/iransans"
+                    android:hint="قیمت تخت  به تومان"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textSize="13sp"/>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/chk_ten_bed"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/chk_eight_bed"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_toRightOf="@id/edt_six_bed"
+                    android:checked="false"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:padding="6dp"
+                    android:text="ده تخت"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_register_house"
+            android:layout_width="230dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_add_new_house_drawable"
+            android:fontFamily="@font/iransans"
+            android:paddingRight="15dp"
+            android:text="ثبت نهایی ملک"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
+</ScrollView>

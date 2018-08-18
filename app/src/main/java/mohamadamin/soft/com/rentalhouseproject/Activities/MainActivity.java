@@ -259,4 +259,14 @@ public class MainActivity extends AppCompatActivity
                 .create();
     }
 
+    public void goToOwnerManagement(View view)
+    {
+        startActivity(new Intent(MainActivity.this, OwnerManagementActivity.class));
+    }
+
+    public void goToOwnerRegistration(View view)
+    {
+        startActivity(new Intent(MainActivity.this, OwnerRegistrationActivity.class));
+    }
+
 }

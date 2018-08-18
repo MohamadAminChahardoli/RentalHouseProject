@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        tools:context=".Fragments.RegisterHouseFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/iransans"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="ثبت ملک جدید"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/divider_manage_section_drawable"
+            android:orientation="vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rd_rental_house"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:text="خانه  اجاره ای"/>
+
+
+                <RadioButton
+                    android:id="@+id/rd_dorm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center_vertical|right"
+                    android:layoutDirection="rtl"
+                    android:text="خوابگاه"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_sex_type"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:entries="@array/sex_types"
+                android:fontFamily="@font/iransans"
+                android:popupBackground="@drawable/custom_spinner_popup"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:fontFamily="@font/iransans"
+                android:gravity="center|left"
+                android:labelFor="@id/sp_states"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="مخصوص"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/divider_manage_section_drawable"
+            android:orientation="vertical"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:id="@+id/img_house_second_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/house_img_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/house_second"/>
+
+            <ImageView
+                android:id="@+id/img_house_first_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/house_img_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/house_main"/>
+
+            <ImageView
+                android:id="@+id/img_house_forth_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/house_img_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/house_forth"/>
+
+            <ImageView
+                android:id="@+id/img_house_third_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/house_img_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/house_third"/>
+        </GridLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/divider_manage_section_drawable"
+            android:orientation="vertical"/>
+
+        <TextView
+            android:id="@+id/txt_complete_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/colorPrimary"
+            android:fontFamily="@font/iransans"
+            android:gravity="right|center_horizontal|center_vertical"
+            android:text="اطلاعات تکمیلی"/>
+
+        <EditText
+            android:id="@+id/edt_house_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/simple_edit_text_border"
+            android:fontFamily="@font/iransans"
+            android:gravity="center_vertical|right"
+            android:hint="تلفن ثابت"
+            android:maxLines="4"
+            android:minLines="2"
+            android:padding="6dp"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/edt_house_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/simple_edit_text_border"
+            android:fontFamily="@font/iransans"
+            android:gravity="center_vertical|right"
+            android:hint="عنوان آگهی مثلا خوابگاه آقایان یا خانه ی مجردی 50 متری"
+            android:maxLines="4"
+            android:minLines="2"
+            android:padding="6dp"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/edt_house_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/simple_edit_text_border"
+            android:fontFamily="@font/iransans"
+            android:gravity="center_vertical|right"
+            android:hint="کدام محله مثلا عباس آباد"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:padding="6dp"
+            android:textSize="13sp"/>
+
+        <EditText
+            android:id="@+id/edt_house_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/simple_edit_text_border"
+            android:fontFamily="@font/iransans"
+            android:gravity="top|right"
+            android:hint="آدرس مثلا : میدان فردوسی-خیابان فردوسی"
+            android:inputType="textMultiLine"
+            android:lineSpacingExtra="5dp"
+            android:lines="6"
+            android:minLines="3"
+            android:padding="6dp"
+            android:scrollbars="vertical"
+            android:textSize="13sp"/>
+
+        <EditText
+            android:id="@+id/edt_house_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/simple_edit_text_border"
+            android:fontFamily="@font/iransans"
+            android:freezesText="true"
+            android:gravity="top|right"
+            android:hint="توضیحات مثلا این ملک تازه ساز است و از امکانات ... بهره مند است و..."
+            android:inputType="textMultiLine"
+            android:lineSpacingExtra="5dp"
+            android:lines="6"
+            android:minLines="3"
+            android:padding="6dp"
+            android:scrollbars="vertical"
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/btn_continue_register_house"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/register_button_login_drawable"
+            android:fontFamily="@font/iransans"
+            android:paddingRight="35dp"
+            android:text="ادامه"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</ScrollView>

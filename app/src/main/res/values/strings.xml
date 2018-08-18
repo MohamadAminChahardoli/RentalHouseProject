@@ -15,6 +15,8 @@
     <string name="dorm_type">خوابگاه</string>
     <string name="female_gender">خانم</string>
     <string name="male_gender">آقا</string>
+    <string name="HouseImageFolder">/HouseImages/</string>
+    <string name="owner_register_login">ورود / ثبت نام</string>
 
     <string-array name="provinces">
         <item>استان</item>
@@ -47,4 +49,10 @@
         <item>خانه</item>
         <item>هردو</item>
     </string-array>
+
+    <string-array name="sex_types">
+        <item>برای آقایان</item>
+        <item>برای بانوان</item>
+    </string-array>
+
 </resources>

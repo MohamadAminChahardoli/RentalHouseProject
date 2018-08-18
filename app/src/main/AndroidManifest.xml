@@ -11,6 +11,7 @@
 
     <uses-permission android:name="mohamadamin.soft.com.rentalhouseproject.permission.C2D_MESSAGE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <!-- Optional permissions -->
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
@@ -23,7 +24,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:supportsRtl">
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -32,6 +34,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.DetailActivity">
+        </activity>
+        <activity android:name=".Activities.OwnerRegistrationActivity">
+        </activity>
+        <activity android:name=".Activities.OwnerManagementActivity">
+        </activity>
+        <activity android:name=".Activities.EditProfileOwnerActivity">
         </activity>
 
         <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
