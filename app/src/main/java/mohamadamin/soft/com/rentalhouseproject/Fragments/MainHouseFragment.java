@@ -50,7 +50,6 @@ public class MainHouseFragment extends Fragment
     {
         btnAddHouse = view.findViewById(R.id.btn_add_house);
         recOwnerHouseList = view.findViewById(R.id.rec_OwnerHouseList);
-        //-------------
         VectorDrawablePreLollipopHelper.SetVectors(getResources(), new VectorView(R.drawable.ic_add_house, btnAddHouse, VectorDrawablePreLollipopHelper.MyDirType.end));
         LoadUpOwnerHouseList();
 

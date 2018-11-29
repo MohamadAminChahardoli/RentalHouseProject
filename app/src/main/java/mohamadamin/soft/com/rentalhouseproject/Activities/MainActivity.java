@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 import com.yarolegovich.slidingrootnav.SlideGravity;
@@ -37,6 +39,8 @@ import mohamadamin.soft.com.rentalhouseproject.Models.SliderModel;
 import mohamadamin.soft.com.rentalhouseproject.PagerTransformers.SimpleCardsPagerTransformer;
 import mohamadamin.soft.com.rentalhouseproject.Adapters.HousesViewPagerAdapter;
 import mohamadamin.soft.com.rentalhouseproject.R;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity
@@ -53,7 +57,7 @@ public class MainActivity extends AppCompatActivity
     private CircleIndicator IndicatorMain;
     private final int SlidingDelay = 3000;
     private DialogPlus filterDialog;
-
+    public static final String BASE_URL = "http://api.myservice.com/";
 
     @Override
     protected void attachBaseContext(Context newBase)
@@ -92,6 +96,16 @@ public class MainActivity extends AppCompatActivity
         setupChangeItemsSeekBar();
         setupFilterDialog();
         Pushe.initialize(this,true);
+
+
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+                .create();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
     }
 
     private void initializeComponents()
@@ -212,15 +226,6 @@ public class MainActivity extends AppCompatActivity
         DrawerMenu.openMenu(true);
     }
 
-    public void openSlidingFilter(View view)
-    {
-        if (DrawerMenu.isMenuOpened())
-        {
-            DrawerMenu.closeMenu();
-        }
-        SlidingFilter.openMenu(true);
-    }
-
     private void slide()
     {
         if (currentPage == MainSliderViewPager.getAdapter().getCount())
@@ -261,11 +266,13 @@ public class MainActivity extends AppCompatActivity
 
     public void goToOwnerManagement(View view)
     {
+        DrawerMenu.closeMenu(true);
         startActivity(new Intent(MainActivity.this, OwnerManagementActivity.class));
     }
 
     public void goToOwnerRegistration(View view)
     {
+        DrawerMenu.closeMenu(true);
         startActivity(new Intent(MainActivity.this, OwnerRegistrationActivity.class));
     }
 
