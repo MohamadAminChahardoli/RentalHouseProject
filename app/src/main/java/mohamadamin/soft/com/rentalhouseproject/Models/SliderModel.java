@@ -42,15 +42,4 @@ public class SliderModel
         BannerPhoto = bannerPhoto;
     }
 
-
-    public static ArrayList<SliderModel> createBanners()
-    {
-        ArrayList<SliderModel> banners =  new ArrayList<>();
-        banners.add(new SliderModel(1, R.drawable.pic1));
-        banners.add(new SliderModel(2, R.drawable.pic2));
-        banners.add(new SliderModel(3, R.drawable.pic3));
-
-        return banners;
-    }
-
 }

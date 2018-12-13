@@ -14,89 +14,98 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-
-
-    <RelativeLayout
-        android:id="@+id/rel_footer"
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark">
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#ffebee">
 
-        <ImageButton
-            android:id="@+id/btn_call_to_owner"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="3dp"
-            android:layout_toLeftOf="@+id/btn_show_cost"
-            android:background="@drawable/circle_btn_style"
-            app:srcCompat="@drawable/call_answer"/>
+        <RelativeLayout
+            android:id="@+id/rel_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/txt_cost_caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_show_cost"
-            android:layout_centerHorizontal="true"
-            android:text="قیمت تخت ها"
-            android:textColor="#fff"
-            android:textSize="12dp"
-            android:gravity="center"/>
+            <ImageButton
+                android:id="@+id/btn_call_to_owner"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="3dp"
+                android:layout_toLeftOf="@+id/btn_show_cost"
+                android:background="@drawable/circle_shape_shadow"
+                app:srcCompat="@drawable/ic_calling"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="showCallDialog"/>
 
-        <ImageButton
-            android:id="@+id/btn_show_cost"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/circle_btn_style"
-            app:srcCompat="@drawable/money_bag_with_dollar_symbol"
-            android:onClick="showCostsBottomSheet"/>
+            <TextView
+                android:id="@+id/txt_cost_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_show_cost"
+                android:layout_centerHorizontal="true"
+                android:text="قیمت تخت ها"
+                android:textColor="@color/detail_icon_color"
+                android:textSize="12dp"
+                android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/txt_call_to_owner_caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_call_to_owner"
-            android:layout_alignLeft="@+id/btn_call_to_owner"
-            android:layout_alignRight="@+id/btn_call_to_owner"
-            android:text="تماس"
-            android:textColor="#fff"
-            android:textSize="12dp"
-            android:gravity="center"/>
+            <ImageButton
+                android:id="@+id/btn_show_cost"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/circle_shape_shadow"
+                app:srcCompat="@drawable/ic_money"
+                android:onClick="showCostsBottomSheet"/>
 
-        <ImageButton
-            android:id="@+id/btn_show_on_map"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="3dp"
-            android:layout_toRightOf="@+id/btn_show_cost"
-            android:background="@drawable/circle_btn_style"
-            app:srcCompat="@drawable/map_pin_marked"
-            android:onClick="showOnGoogleMap"/>
-        <TextView
-            android:id="@+id/txt_show_on_map_caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_show_on_map"
-            android:layout_alignLeft="@+id/btn_show_on_map"
-            android:layout_alignRight="@+id/btn_show_on_map"
-            android:text="نقشه"
-            android:textColor="#fff"
-            android:textSize="12dp"
-            android:gravity="center"/>
+            <TextView
+                android:id="@+id/txt_call_to_owner_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_call_to_owner"
+                android:layout_alignLeft="@+id/btn_call_to_owner"
+                android:layout_alignRight="@+id/btn_call_to_owner"
+                android:text="تماس"
+                android:textColor="@color/detail_icon_color"
+                android:textSize="12dp"
+                android:gravity="center"/>
 
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/btn_show_on_map"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/btn_show_cost"
+                android:background="@drawable/circle_shape_shadow"
+                app:srcCompat="@drawable/ic_placeholder"
+                android:onClick="showOnGoogleMap"/>
+            <TextView
+                android:id="@+id/txt_show_on_map_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_show_on_map"
+                android:layout_alignLeft="@+id/btn_show_on_map"
+                android:layout_alignRight="@+id/btn_show_on_map"
+                android:text="نقشه"
+                android:textColor="@color/detail_icon_color"
+                android:textSize="12dp"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/rel_footer"
+        android:layout_above="@+id/card_footer"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -114,15 +123,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
-
-                <!--<ImageView
-                    android:id="@+id/img_house_main_photo_detail"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/pic3"
-                    android:transitionName="mainHousePhoto"/>-->
+                <ProgressBar
+                    android:id="@+id/progressLoadingDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/view_pager_house_photos"
@@ -260,7 +266,8 @@
                     android:paddingTop="5dp"
                     android:text="نوع"
                     android:textColor="@color/gray400"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp"
+                    android:transitionName="houseTypeLabel"/>
 
                 <TextView
                     android:id="@+id/txt_house_type"
@@ -274,7 +281,8 @@
                     android:paddingTop="5dp"
                     android:text="خوابگاه"
                     android:textColor="@color/gray800"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp"
+                    android:transitionName="houseType"/>
 
                 <TextView
                     android:id="@+id/txt_house_visited_count_label"
@@ -288,7 +296,7 @@
                     android:paddingTop="5dp"
                     android:text="تعداد بازدید"
                     android:textColor="@color/gray400"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/txt_house_visited_count"
@@ -302,7 +310,8 @@
                     android:paddingTop="5dp"
                     android:text="100"
                     android:textColor="@color/gray800"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp"
+                    android:transitionName="houseVisitedCount"/>
 
 
                 <!--address-->
@@ -346,7 +355,6 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
-                    android:text="تهران، لویزان، اتوبان شهید صیاد شیرازی، زیر پل شهید بابایی، خوابگاه دانشکده شهید شمسی پور"
                     android:textColor="@color/gray800"
                     android:textSize="12sp"/>
 
@@ -392,7 +400,6 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
-                    android:text="حیاط، پارک و وسیله ورزشی، نماز خانه سالن مطالعه، حمام، کولر، شوفاژ، تلوزیون، کتابخانه و..."
                     android:textColor="@color/gray800"
                     android:textSize="12sp"/>
 
@@ -438,7 +445,6 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
-                    android:text="این خوابگاه مربوط به دانشکده شهید شمسی پور است و کسی که دانشجوی شمسی پور نیست، به هیچ وجه تماس نگیرد. اینجا اتاق های چهار و شش تخته موجود است."
                     android:textColor="@color/gray800"
                     android:textSize="12sp"/>
 

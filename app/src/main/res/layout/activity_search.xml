@@ -10,32 +10,55 @@
     <android.support.v7.widget.CardView
         android:id="@+id/card_search_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize"
+        android:layout_height="50dp"
         app:cardElevation="3dp"
-        app:cardCornerRadius="0dp">
+        app:cardCornerRadius="7dp"
+        android:layout_margin="10dp"
+        android:transitionName="cardToolbar">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton
-                android:id="@+id/btn_search_for"
-                android:layout_width="?android:actionBarSize"
-                android:layout_height="?android:actionBarSize"
-                android:layout_alignParentRight="true"
-                android:background="?android:selectableItemBackgroundBorderless"
-                app:srcCompat="@drawable/magnify_gray"/>
-
             <EditText
                 android:id="@+id/edt_search_for"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toLeftOf="@+id/btn_search_for"
+                android:layout_toLeftOf="@+id/btn_clear_search_box"
+                android:layout_toRightOf="@+id/btn_search_for"
                 android:background="@drawable/edt_search_style"
-                android:hint="دنبال هرچی میگردی اینجا بنویس..."
-                android:textColor="@color/drawer_icon_color"
+                android:hint="@string/searchHintText"
                 android:textSize="14sp"
-                android:textColorHint="@color/gray400"/>
+                android:textColor="@color/gray800"
+                android:textColorHint="@color/gray400"
+                android:transitionName="searchText"
+                android:imeOptions="actionSearch"
+                android:inputType="text"/>
+
+            <ImageButton
+                android:id="@+id/btn_search_for"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:selectableItemBackgroundBorderless"
+                app:srcCompat="@drawable/search"
+                android:transitionName="buttonSearch"/>
+
+            <ImageButton
+                android:id="@+id/btn_clear_search_box"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:selectableItemBackgroundBorderless"
+                app:srcCompat="@drawable/window_close"
+                android:visibility="invisible"
+                android:transitionName="buttonClearText"/>
 
         </RelativeLayout>
 
@@ -43,8 +66,18 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_search_result"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_below="@+id/card_search_toolbar"/>
+        android:layout_below="@+id/card_search_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/txtNotFoundSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/nothingFoundText"
+        android:visibility="gone"/>
 
 </RelativeLayout>

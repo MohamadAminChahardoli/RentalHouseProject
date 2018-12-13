@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="mohamadamin.soft.com.rentalhouseproject">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="mohamadamin.soft.com.rentalhouseproject">
 
-    <uses-sdk tools:overrideLibrary="co.ronash.pushe"/>
+    <uses-sdk tools:overrideLibrary="co.ronash.pushe" />
 
     <permission
         android:name="mohamadamin.soft.com.rentalhouseproject.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"/>
+        android:protectionLevel="signature" />
 
-    <uses-permission android:name="mohamadamin.soft.com.rentalhouseproject.permission.C2D_MESSAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="mohamadamin.soft.com.rentalhouseproject.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- Optional permissions -->
-    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".App.MyApplication"
@@ -26,30 +27,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:supportsRtl">
+        tools:ignore="GoogleAppIndexingWarning,InnerclassSeparator"
+        tools:replace="android:icon,android:supportsRtl">
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.DetailActivity">
-        </activity>
-        <activity android:name=".Activities.OwnerRegistrationActivity">
-        </activity>
-        <activity android:name=".Activities.OwnerManagementActivity">
-        </activity>
-        <activity android:name=".Activities.EditProfileOwnerActivity">
-        </activity>
+        <activity android:name=".Activities.DetailActivity"></activity>
+        <activity android:name=".Activities.OwnerRegistrationActivity"></activity>
+        <activity android:name=".Activities.OwnerManagementActivity"></activity>
+        <activity android:name=".Activities.EditProfileOwnerActivity"></activity>
 
         <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
 
                 <data
                     android:path="mohamadamin.soft.com.rentalhouseproject"
-                    android:scheme="package"/>
+                    android:scheme="package" />
             </intent-filter>
         </receiver>
         <receiver
@@ -57,22 +55,22 @@
             android:exported="true"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <category android:name="mohamadamin.soft.com.rentalhouseproject"/>
+                <category android:name="mohamadamin.soft.com.rentalhouseproject" />
             </intent-filter>
         </receiver>
 
         <meta-data
             android:name="co.ronash.pushe.token"
-            android:value="PUSHE_612706385825"/>
+            android:value="PUSHE_612706385825" />
         <meta-data
             android:name="co.ronash.pushe.cr"
-            android:value="Tm9uZQ=="/>
+            android:value="Tm9uZQ==" />
 
-        <activity android:name=".Activities.SearchActivity">
-        </activity>
+        <activity android:name=".Activities.SearchActivity"></activity>
+        <activity android:name=".Activities.FilterActivity"></activity>
     </application>
 
 </manifest>

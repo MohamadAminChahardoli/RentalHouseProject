@@ -13,10 +13,19 @@
     <string name="both_type">خانه و خوابگاه</string>
     <string name="home_type">خانه</string>
     <string name="dorm_type">خوابگاه</string>
-    <string name="female_gender">خانم</string>
-    <string name="male_gender">آقا</string>
-    <string name="HouseImageFolder">/HouseImages/</string>
+    <string name="female_gender">برای بانوان</string>
+    <string name="male_gender">برای آقایان</string>
+    <string name="both_gender">برای هردو</string>
     <string name="owner_register_login">ورود / ثبت نام</string>
+    <string name="sliderImageFolder">http://rentalhouse.aryasoft.org/Images/SliderImages/</string>
+    <string name="houseImageFolder">http://rentalhouse.aryasoft.org/Images/HouseImages/</string>
+    <string name="waiting_text">لطفا کمی صبر کنید.</string>
+    <string name="dearUserText">کابر گرامی</string>
+    <string name="noInternetText">تلفن همراه شما به اینترنت متصل نیست.</string>
+    <string name="dormText">خوابگاه</string>
+    <string name="houseText">خانه</string>
+    <string name="nothingFoundText">موردی پیدا نشد...</string>
+    <string name="searchHintText">دنبال هرچی میگردی اینجا بنویس...</string>
 
     <string-array name="provinces">
         <item>استان</item>

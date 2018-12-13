@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="160dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="1dp"
     app:cardElevation="3dp"
-    android:layout_centerInParent="true">
+    android:layout_centerInParent="true"
+    android:layout_margin="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/img_house_main_photo"
+            android:id="@+id/img_house_main_photo_search"
             android:layout_width="match_parent"
             android:layout_height="130dp"
+            android:src="@drawable/no_image"
             android:scaleType="centerCrop"
             android:transitionName="mainHousePhoto"/>
 
         <TextView
-            android:id="@+id/txt_house_title"
+            android:id="@+id/txt_house_title_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_house_main_photo"
+            android:layout_below="@+id/img_house_main_photo_search"
             android:text="عنوان خانه"
+            android:paddingTop="2dp"
             android:paddingRight="20dp"
             android:textSize="14sp"
             android:gravity="right"
@@ -32,12 +35,14 @@
             android:transitionName="houseTitle"/>
 
         <TextView
-            android:id="@+id/txt_house_zone_and_registered_time"
+            android:id="@+id/txt_house_zone_and_registered_time_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_house_title"
+            android:layout_below="@+id/txt_house_title_search"
             android:text="3 دقیقه پیش در عباس آباد"
             android:paddingRight="20dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             android:textSize="12sp"
             android:gravity="right"
             android:textColor="@color/gray500"
@@ -45,99 +50,112 @@
 
 
         <TextView
-            android:id="@+id/txt_house_mortgage_label"
+            android:id="@+id/txt_house_mortgage_label_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ودیعه:"
             android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="2dp"
             android:textSize="12sp"
             android:gravity="right"
-            android:layout_below="@+id/txt_house_zone_and_registered_time"
+            android:layout_below="@+id/txt_house_zone_and_registered_time_search"
             android:layout_alignParentRight="true"
             android:textColor="@color/gray500"
             android:transitionName="houseMortgageLabel"/>
 
-            <TextView
-                android:id="@+id/txt_house_mortgage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="مجانی"
-                android:paddingRight="20dp"
-                android:textSize="12sp"
-                android:gravity="right"
-                android:layout_below="@+id/txt_house_zone_and_registered_time"
-                android:layout_toLeftOf="@+id/txt_house_mortgage_label"
-                android:textColor="@color/gray500"
-                android:transitionName="houseVisitedCount"/>
+        <TextView
+            android:id="@+id/txt_house_mortgage_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="مجانی"
+            android:paddingRight="20dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:layout_below="@+id/txt_house_zone_and_registered_time_search"
+            android:layout_toLeftOf="@+id/txt_house_mortgage_label_search"
+            android:textColor="@color/gray500"
+            android:transitionName="houseVisitedCount"/>
 
 
         <TextView
-            android:id="@+id/txt_house_monthly_rent_label"
+            android:id="@+id/txt_house_monthly_rent_label_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="اجاره:"
             android:paddingRight="20dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             android:textSize="12sp"
             android:gravity="right"
-            android:layout_below="@+id/txt_house_mortgage"
+            android:layout_below="@+id/txt_house_mortgage_search"
             android:layout_alignParentRight="true"
             android:textColor="@color/gray500"
             android:transitionName="houseMonthlyRentLabel"/>
 
         <TextView
-            android:id="@+id/txt_house_monthly_rent"
+            android:id="@+id/txt_house_monthly_rent_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="300,000"
             android:paddingRight="20dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             android:textSize="12sp"
             android:gravity="right"
-            android:layout_below="@+id/txt_house_mortgage"
-            android:layout_toLeftOf="@+id/txt_house_monthly_rent_label"
+            android:layout_below="@+id/txt_house_mortgage_search"
+            android:layout_toLeftOf="@+id/txt_house_monthly_rent_label_search"
             android:textColor="@color/gray500"
             android:transitionName="houseMonthlyRent"
             android:layout_marginBottom="15dp"/>
 
         <TextView
-            android:id="@+id/txt_house_type_label"
+            android:id="@+id/txt_house_type_label_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="نوع:"
             android:paddingRight="20dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             android:textSize="12sp"
             android:gravity="right"
-            android:layout_below="@+id/txt_house_monthly_rent_label"
+            android:layout_below="@+id/txt_house_monthly_rent_label_search"
             android:layout_alignParentRight="true"
             android:textColor="@color/gray500"
             android:transitionName="houseTypeLabel"/>
 
         <TextView
-            android:id="@+id/txt_house_type"
+            android:id="@+id/txt_house_type_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="خوابگاه"
             android:paddingRight="20dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             android:textSize="12sp"
             android:gravity="right"
-            android:layout_below="@+id/txt_house_monthly_rent_label"
-            android:layout_toLeftOf="@+id/txt_house_type_label"
+            android:layout_below="@+id/txt_house_monthly_rent_label_search"
+            android:layout_toLeftOf="@+id/txt_house_type_label_search"
             android:textColor="@color/gray500"
             android:transitionName="houseType"
             android:layout_marginBottom="15dp"/>
 
         <TextView
-            android:id="@+id/txt_house_visited_count_item"
+            android:id="@+id/txt_house_visited_count_item_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1500 بازدید"
             android:paddingRight="20dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             android:textSize="12sp"
-            android:gravity="right|center"
-            android:layout_below="@+id/txt_house_type_label"
+            android:gravity="right"
+            android:layout_below="@+id/txt_house_type_label_search"
             android:textColor="@color/gray500"
             android:transitionName="houseVisitedCount"
-            android:layout_marginBottom="15dp"
-            android:drawableRight="@drawable/ic_view"/>
+            android:layout_marginBottom="15dp"/>
 
     </RelativeLayout>
 

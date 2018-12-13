@@ -5,13 +5,13 @@
     xmlns:mstb="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ffffff"
+    android:background="@color/gray_50"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
     <android.support.v7.widget.CardView
         android:id="@+id/filter_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="45dp"
         android:layout_alignParentTop="true"
         app:cardElevation="2dp"
         app:cardCornerRadius="0dp">
@@ -30,6 +30,7 @@
                 android:textColor="@color/gray800"/>
 
             <Button
+                android:id="@+id/btnDeleteFilters"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="?android:selectableItemBackground"
@@ -46,7 +47,8 @@
         android:id="@+id/sv_filter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/filter_toolbar">
+        android:layout_below="@+id/filter_toolbar"
+        android:layout_above="@+id/rel_filter_footer">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,23 +59,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:background="@color/gray_50">
+        android:background="#fff"
+        android:layout_margin="3dp">
 
         <TextView
-            android:id="@+id/txt_select_zone_label"
+            android:id="@+id/txt_zone_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="انتخاب محل :"
-            android:textSize="14sp"/>
+            android:layout_toEndOf="@+id/edtZone"
+            android:text="منطقه : "
+            android:textSize="14sp"
+            android:layout_alignTop="@+id/edtZone"
+            android:layout_alignBottom="@+id/edtZone"
+            android:gravity="center"/>
 
-        <android.support.v7.widget.AppCompatSpinner
-            android:id="@+id/sp_select_zone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/edtZone"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
             android:entries="@array/cities"
-            android:layout_toLeftOf="@+id/txt_select_zone_label"
-            android:layout_marginRight="20dp"/>
+            android:layout_centerInParent="true"
+            android:background="@drawable/edt_rounded_border"
+            android:gravity="center"
+            android:textSize="12sp"/>
 
         <ImageButton
             android:id="@+id/btn_cancel_zone_filter"
@@ -91,8 +99,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:background="@color/gray_50"
-        android:layout_marginTop="5dp">
+        android:background="#ffffff"
+        android:layout_margin="3dp">
 
         <TextView
             android:id="@+id/txt_choose_mortgage_range_label"
@@ -117,12 +125,16 @@
             android:text="از"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/txt_choose_mortgage_range_label"
-            android:layout_margin="10dp"/>
+            android:layout_alignTop="@+id/edt_from_mortgage"
+            android:layout_alignBottom="@+id/edt_from_mortgage"
+            android:gravity="center"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"/>
 
         <EditText
             android:id="@+id/edt_from_mortgage"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_below="@+id/txt_choose_mortgage_range_label"
             android:layout_toLeftOf="@+id/txt_from_mortgage"
             android:background="@drawable/edt_rounded_border"
@@ -137,13 +149,17 @@
             android:layout_height="wrap_content"
             android:text="تا"
             android:layout_below="@+id/txt_choose_mortgage_range_label"
-            android:layout_margin="10dp"
-            android:layout_toLeftOf="@+id/edt_from_mortgage"/>
+            android:layout_toLeftOf="@+id/edt_from_mortgage"
+            android:layout_alignTop="@+id/edt_to_mortgage"
+            android:layout_alignBottom="@+id/edt_to_mortgage"
+            android:gravity="center"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"/>
 
         <EditText
             android:id="@+id/edt_to_mortgage"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_below="@+id/txt_choose_mortgage_range_label"
             android:layout_toLeftOf="@+id/txt_to_mortgage"
             android:background="@drawable/edt_rounded_border"
@@ -160,8 +176,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:background="@color/gray_50"
-        android:layout_marginTop="5dp">
+        android:background="#ffffff"
+        android:layout_margin="3dp">
 
         <TextView
             android:id="@+id/txt_choose_rent_range_label"
@@ -186,12 +202,16 @@
             android:text="از"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/txt_choose_rent_range_label"
-            android:layout_margin="10dp"/>
+            android:layout_alignTop="@+id/edt_from_rent"
+            android:layout_alignBottom="@+id/edt_from_rent"
+            android:gravity="center"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"/>
 
         <EditText
             android:id="@+id/edt_from_rent"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_below="@+id/txt_choose_rent_range_label"
             android:layout_toLeftOf="@+id/txt_from_rent"
             android:background="@drawable/edt_rounded_border"
@@ -206,13 +226,17 @@
             android:layout_height="wrap_content"
             android:text="تا"
             android:layout_below="@+id/txt_choose_rent_range_label"
-            android:layout_margin="10dp"
-            android:layout_toLeftOf="@+id/edt_from_rent"/>
+            android:layout_toLeftOf="@+id/edt_from_rent"
+            android:layout_alignTop="@+id/edt_to_rent"
+            android:layout_alignBottom="@+id/edt_to_rent"
+            android:gravity="center"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"/>
 
         <EditText
             android:id="@+id/edt_to_rent"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_below="@+id/txt_choose_rent_range_label"
             android:layout_toLeftOf="@+id/txt_to_rent"
             android:background="@drawable/edt_rounded_border"
@@ -229,8 +253,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:background="@color/gray_50"
-        android:layout_marginTop="5dp">
+        android:background="#fff"
+        android:layout_margin="3dp">
 
         <TextView
             android:id="@+id/txt_choose_type_label"
@@ -248,37 +272,16 @@
             android:background="?android:selectableItemBackgroundBorderless"
             android:padding="2dp"/>
 
-        <RadioGroup
-            android:id="@+id/rg_house_types"
-            android:layout_width="match_parent"
+        <belka.us.androidtoggleswitch.widgets.MultipleToggleSwitch
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_below="@+id/txt_choose_type_label">
-
-            <RadioButton
-                android:id="@+id/rb_both_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/both_type"
-                android:layoutDirection="rtl"
-                android:checked="true"/>
-            <RadioButton
-                android:id="@+id/rb_home_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_type"
-                android:layoutDirection="rtl"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"/>
-            <RadioButton
-                android:id="@+id/rb_dorm_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dorm_type"
-                android:layoutDirection="rtl"/>
-
-        </RadioGroup>
+            app:textToggleCenter="خانه"
+            app:textToggleLeft="هردو"
+            app:textToggleRight="خوابگاه"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            app:toggleWidth="80dp"
+            android:layout_below="@+id/txt_choose_type_label"/>
 
     </RelativeLayout>
 
@@ -287,15 +290,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:background="@color/gray_50"
-            android:layout_marginTop="5dp">
+            android:background="#fff"
+            android:layout_margin="3dp">
 
             <TextView
                 android:id="@+id/txt_choose_gender_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="انتخاب نوع :"
+                android:text="انتخاب جنسیت :"
                 android:textSize="14sp"/>
 
             <ImageButton
@@ -306,103 +309,89 @@
                 android:background="?android:selectableItemBackgroundBorderless"
                 android:padding="2dp"/>
 
-            <RadioGroup
-                android:id="@+id/rg_house_gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_below="@+id/txt_choose_gender_label">
-
-                <RadioButton
-                    android:id="@+id/rb_male_gender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/male_gender"
-                    android:layoutDirection="rtl"/>
-
-                <RadioButton
-                    android:id="@+id/rb_female_gender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/female_gender"
-                    android:layoutDirection="rtl"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginLeft="15dp"/>
-
-            </RadioGroup>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rel_filter_footer"
-            android:layout_width="match_parent"
+            <belka.us.androidtoggleswitch.widgets.MultipleToggleSwitch
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp">
-
-            <RelativeLayout
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
-
-                <ImageButton
-                    android:id="@+id/btn_cancel_filter"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/circle_btn_style"
-                    app:srcCompat="@drawable/window_close"
-                    android:onClick="showCostsBottomSheet"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/txt_cancel_filter_caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="لغو"
-                    android:textColor="#fff"
-                    android:textSize="12dp"
-                    android:gravity="center"
-                    android:layout_below="@+id/btn_cancel_filter"
-                    android:layout_alignLeft="@+id/btn_cancel_filter"
-                    android:layout_alignRight="@+id/btn_cancel_filter"/>
-
-                <ImageButton
-                    android:id="@+id/btn_submit_filter"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/circle_btn_style"
-                    app:srcCompat="@drawable/checked"
-                    android:onClick="showOnGoogleMap"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-                <TextView
-                    android:id="@+id/txt_submit_filter_caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="تایید"
-                    android:textColor="#fff"
-                    android:textSize="12dp"
-                    android:gravity="center"
-                    android:layout_below="@+id/btn_submit_filter"
-                    android:layout_alignLeft="@+id/btn_submit_filter"
-                    android:layout_alignRight="@+id/btn_submit_filter"/>
-
-            </RelativeLayout>
-
-
-
+            app:textToggleCenter="آقایان"
+            app:textToggleLeft="هردو"
+            app:textToggleRight="بانوان"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            app:toggleWidth="80dp"
+            android:layout_below="@+id/txt_choose_gender_label"/>
 
         </RelativeLayout>
+
+
 
     </LinearLayout>
 
     </ScrollView>
 
+    <RelativeLayout
+        android:id="@+id/rel_filter_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_alignParentBottom="true">
 
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageButton
+                android:id="@+id/btn_cancel_filter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circle_shape_shadow"
+                app:srcCompat="@drawable/window_close"
+                android:onClick="showCostsBottomSheet"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/txt_cancel_filter_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="لغو"
+                android:textColor="@color/gray800"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_below="@+id/btn_cancel_filter"
+                android:layout_alignLeft="@+id/btn_cancel_filter"
+                android:layout_alignRight="@+id/btn_cancel_filter"/>
+
+            <ImageButton
+                android:id="@+id/btn_submit_filter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circle_shape_shadow"
+                app:srcCompat="@drawable/checked"
+                android:onClick="showOnGoogleMap"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:id="@+id/txt_submit_filter_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تایید"
+                android:textColor="@color/gray800"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_below="@+id/btn_submit_filter"
+                android:layout_alignLeft="@+id/btn_submit_filter"
+                android:layout_alignRight="@+id/btn_submit_filter"/>
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>

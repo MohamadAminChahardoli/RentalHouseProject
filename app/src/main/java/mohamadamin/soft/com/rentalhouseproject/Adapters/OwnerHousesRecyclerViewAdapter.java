@@ -47,7 +47,7 @@ public class OwnerHousesRecyclerViewAdapter extends RecyclerView.Adapter<OwnerHo
         {
             return;
         }
-        Glide.with(context).load(context.getResources().getString(R.string.HouseImageFolder) + OwnerRegisteredHouseList.get(position).ImageName).apply(placeholderRequest).into(holder.imgOwnerHouse);
+        Glide.with(context).load(context.getResources().getString(R.string.houseImageFolder) + OwnerRegisteredHouseList.get(position).ImageName).apply(placeholderRequest).into(holder.imgOwnerHouse);
         holder.txtOwnerHouseTitle.setText(OwnerRegisteredHouseList.get(position).HouseTitle);
         holder.txtOwnerHouseZone.setText(OwnerRegisteredHouseList.get(position).Zone);
         //------------------------------

@@ -21,23 +21,23 @@ public interface RentalHouseApi {
 
     @Headers("User-Agent: <RentalHouse>")
     @GET("Api/HouseApi/GetHouseSliders")
-    Call<List<Slide>> getSlides();
+    Call<List<Slide>> getSlides();/*done*/
 
     @Headers("User-Agent: <RentalHouse>")
-    @POST("Api/HouseApi/SearchHouse")
-    Call<List<Slide>> searchHouse(String searchTerm, int skipItem, int takeItem);/*???*/
+    @GET("Api/HouseApi/SearchHouse")
+    Call<List<SecondaryHouse>> searchForHouse(@Query("searchTerm") String searchTerm, @Query("skipItem")int skipItem, @Query("takeItem")int takeItem);/*done*/
 
     @Headers("User-Agent: <RentalHouse>")
     @GET("Api/HouseApi/GetHouseDetails")
-    Call<List<House>> getHouseDetails(@Query("houseId")int houseId);/*3???*/
+    Call<House> getHouseDetails(@Query("houseId")int houseId);/*done*/
 
     @Headers("User-Agent: <RentalHouse>")
     @GET("Api/HouseApi/GetAllHouses")
-    Call<List<SecondaryHouse>> getAllHouses(@Query("houseId")int skipNumber, @Query("houseId")int takeNumber);
+    Call<List<SecondaryHouse>> getAllHouses(@Query("skipNumber")int skipNumber, @Query("takeNumber")int takeNumber);/*done*/
 
     @Headers("User-Agent: <RentalHouse>")
-    @GET("Api/HouseApi/GetHousesWithFilter")
-    Call<List<SecondaryHouse>> getHousesWithFilter(FilterModel filter, int skipNumber, int takeNumber);/*???*/
+    @POST("Api/HouseApi/GetHousesWithFilter")
+    Call<List<SecondaryHouse>> getHousesWithFilter(@Body FilterModel filter, @Query("skipNumber")int skipNumber, @Query("takeNumber")int takeNumber);/*???*/
 
     @Headers("User-Agent: <RentalHouse>")
     @POST("Api/RegisterationApi/RegisterUser")

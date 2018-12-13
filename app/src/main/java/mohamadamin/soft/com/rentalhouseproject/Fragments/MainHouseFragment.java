@@ -11,11 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import mohamadamin.soft.com.rentalhouseproject.Adapters.OwnerHousesRecyclerViewAdapter;
 import mohamadamin.soft.com.rentalhouseproject.Models.OwnerRegisteredHouse;
@@ -93,6 +91,5 @@ public class MainHouseFragment extends Fragment
             }
         });
     }
-
 
 }

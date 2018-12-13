@@ -1,19 +1,19 @@
 package mohamadamin.soft.com.rentalhouseproject.Models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import mohamadamin.soft.com.rentalhouseproject.R;
 
-public class SecondaryHouse
+public class SecondaryHouse implements Serializable
 {
-
-
+    private int Id;
     private String Title;
     private String DateOfRegister;
     private String Zone;
     private String Mortgage;
     private String MonthlyRent;
-    private int Photo;
+    private String Photo;
     private int Type;
     private int VisitedCount;
 
@@ -22,7 +22,7 @@ public class SecondaryHouse
     {
     }
 
-    public SecondaryHouse(String title, String dateOfRegister, String zone, int photo, String mortgage, String monthlyRent, int type, int visitedCount)
+    public SecondaryHouse(String title, String dateOfRegister, String zone, String photo, String mortgage, String monthlyRent, int type, int visitedCount)
     {
         this.Title = title;
         this.DateOfRegister = dateOfRegister;
@@ -34,6 +34,9 @@ public class SecondaryHouse
         this.VisitedCount = visitedCount;
     }
 
+    public int getId() {
+        return Id;
+    }
 
     public String getTitle()
     {
@@ -50,7 +53,7 @@ public class SecondaryHouse
         return Zone;
     }
 
-    public int getPhoto()
+    public String getPhoto()
     {
         return Photo;
     }
@@ -76,6 +79,10 @@ public class SecondaryHouse
     }
 
 
+    public void setId(int id) {
+        Id = id;
+    }
+
     public void setTitle(String title)
     {
         this.Title = title;
@@ -91,7 +98,7 @@ public class SecondaryHouse
         this.Zone = zone;
     }
 
-    public void setPhoto(int photo)
+    public void setPhoto(String photo)
     {
         this.Photo = photo;
     }
@@ -114,28 +121,6 @@ public class SecondaryHouse
     public void setVisitedCount(int visitedCount)
     {
         this.VisitedCount = visitedCount;
-    }
-
-
-    public static ArrayList<SecondaryHouse> createHouses(int numberOfHouses)
-    {
-        ArrayList<SecondaryHouse> houses = new ArrayList<>();
-        for(int i=0; i<numberOfHouses; i++)
-        {
-            houses.add(new SecondaryHouse(
-                    "خانه زیبا شماره "+i,
-                    "دیروز",
-                    "ظفر",
-                    R.drawable.pic3,
-                    "مجانی",
-                    "360,000",
-                    1,
-                    123
-
-            ));
-        }
-
-        return houses;
     }
 
 }
